@@ -830,7 +830,1765 @@
 
     .admin-menu-item {
       width: calc(100% - 20px);
- …30108 tokens truncated…ct"><option>${escapeHtml(filter)}</option></select></div>
+      height: 42px;
+      margin: 2px 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      color: #d7e0ef;
+      font-size: 14px;
+    }
+
+    .admin-menu-item:hover { background: rgba(255,255,255,.08); }
+    .admin-menu-item.active {
+      color: #fff;
+      background: #1f6feb;
+      box-shadow: inset 3px 0 0 #9dc5ff;
+    }
+
+    .side-note {
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 14px 18px;
+      border-top: 1px solid rgba(255,255,255,.08);
+      color: #d7e0ef;
+      background: #0f172a;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .side-note strong {
+      display: block;
+      margin-top: 4px;
+      color: #fff;
+    }
+
+    .admin-topbar {
+      height: 64px;
+      padding: 0 24px;
+      border-bottom-color: var(--line);
+    }
+
+    .topbar-left {
+      display: block;
+    }
+
+    .hamburger { display: none; }
+    .crumb { color: var(--muted); font-size: 13px; }
+    .crumb strong { color: var(--muted); font-weight: 400; }
+    .system-name {
+      margin-top: 2px;
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .admin-user {
+      gap: 8px;
+      color: #344054;
+      font-size: 14px;
+    }
+
+    .avatar-circle {
+      display: grid;
+      place-items: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      color: #fff;
+      background: var(--blue);
+      font-weight: 700;
+    }
+
+    .admin-tabs { display: none; }
+
+    .activity-context-tabs {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 16px;
+      padding: 4px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(16,24,40,.04);
+    }
+
+    .activity-context-tab {
+      min-height: 36px;
+      padding: 8px 16px;
+      border: 0;
+      border-radius: 6px;
+      color: #475467;
+      background: transparent;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .activity-context-tab:hover { color: var(--blue); background: #f5f8ff; }
+    .activity-context-tab.active { color: #fff; background: var(--blue); font-weight: 700; }
+    .activity-detail-panel[hidden] { display: none; }
+
+    .admin-content {
+      min-height: calc(100vh - 64px);
+      margin: 0;
+      padding: 22px 24px 36px;
+      background: var(--bg);
+    }
+
+    .page-title { margin-bottom: 16px; }
+    .page-title h1 { color: var(--text); font-size: 24px; line-height: 1.3; }
+    .page-title p { margin-top: 6px; color: var(--muted); line-height: 1.5; }
+
+    .btn {
+      min-height: 36px;
+      height: 36px;
+      padding: 8px 14px;
+      border-color: #d4dbe8;
+      border-radius: 8px;
+      color: #344054;
+      background: #fff;
+    }
+
+    .btn.blue,
+    .btn.green {
+      border-color: var(--blue);
+      color: #fff;
+      background: var(--blue);
+    }
+
+    .btn.blue:hover,
+    .btn.green:hover { background: #0f4fb8; }
+    .btn.ghost { background: #fff; }
+    .btn.text { color: var(--blue); background: transparent; }
+    .btn.small { height: 32px; min-height: 32px; border-radius: 8px; }
+
+    .stats {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .stat-card {
+      min-height: 112px;
+      padding: 16px;
+      border-color: var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(16,24,40,.04);
+    }
+
+    .stat-card span { color: var(--muted); }
+    .stat-card strong { margin-top: 4px; font-size: 26px; font-weight: 800; }
+    .stat-card small { color: var(--weak); }
+
+    .toolbar {
+      margin-bottom: 14px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(16,24,40,.04);
+    }
+
+    .input,
+    .select,
+    .textarea {
+      border-color: #d4dbe8;
+      border-radius: 8px;
+      color: var(--text);
+    }
+
+    .input,
+    .select { height: 36px; min-height: 36px; padding: 8px 10px; }
+    .textarea { padding: 8px 10px; }
+    .input:focus,
+    .select:focus,
+    .textarea:focus {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(31,111,235,.12);
+    }
+
+    .table-wrap {
+      border-color: var(--line);
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 1px 2px rgba(16,24,40,.04);
+    }
+
+    .table {
+      min-width: 1080px;
+      table-layout: auto;
+    }
+
+    .table th {
+      height: auto;
+      padding: 12px;
+      color: #475467;
+      background: #f8fafc;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    .table td {
+      height: auto;
+      padding: 12px;
+      border-top: 0;
+      border-bottom: 1px solid var(--line);
+      color: #344054;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    .table th,
+    .table td { border-right: 0; }
+    .table tr:last-child td { border-bottom: 0; }
+    .table tr:hover td { background: #fbfdff; }
+    .table-actions { justify-content: flex-start; gap: 4px; flex-wrap: wrap; }
+    .table-actions .link { padding: 4px 6px; }
+
+    .badge,
+    .metric-chip {
+      min-width: auto;
+      min-height: 24px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-weight: 400;
+    }
+
+    .badge.live { color: #16a34a; background: #eaf8ef; }
+    .badge.warn { color: #c2410c; background: #fff3e8; }
+    .badge.blue { color: #1f6feb; background: #eaf2ff; }
+    .badge.purple { color: #7c3aed; background: #f2ecff; }
+    .badge.red { color: #dc2626; background: #fff1f1; }
+    .badge.gray { color: #475467; background: #f2f4f7; }
+
+    .pagination { padding: 16px 4px 0; color: var(--muted); }
+
+    .rule-card {
+      padding: 0;
+      border-color: var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 1px 2px rgba(16,24,40,.04);
+    }
+
+    .section-title {
+      min-height: 48px;
+      margin: 0;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #f8fafc;
+    }
+
+    .section-title h2 { font-size: 16px; }
+    .rule-card > .form-grid { padding: 14px; }
+    .rule-card > .details-grid { margin: 14px; }
+    .rule-card > .capability-card { margin: 14px; }
+    .rule-card > .table-wrap { margin: 14px; }
+    .rule-card > #conditions { padding: 14px; }
+    .rule-card > .reward-list { padding: 14px 14px 0; }
+    .rule-card > .reward-list + .form-grid { padding-top: 14px; }
+
+    .form-grid { gap: 12px; }
+    .form-row label { color: #475467; font-weight: 400; }
+    .hint { color: var(--muted); }
+
+    .scope-note,
+    .info-note,
+    .warning-note {
+      border-radius: 8px;
+      box-shadow: none;
+    }
+
+    .scope-note,
+    .info-note {
+      border-color: #bfdbfe;
+      color: #1e40af;
+      background: #eaf2ff;
+    }
+
+    .warning-note {
+      border-color: #fed7aa;
+      color: #9a3412;
+      background: #fff3e8;
+    }
+
+    .details-grid {
+      gap: 12px;
+      border: 0;
+    }
+
+    .detail-item,
+    .detail-item:nth-child(2n),
+    .detail-item:nth-child(3n) {
+      display: block;
+      min-height: 64px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .detail-item dt,
+    .detail-item dd { display: block; }
+    .detail-item dt { padding: 10px 10px 0; color: var(--muted); background: transparent; font-size: 12px; }
+    .detail-item dd { padding: 5px 10px 10px; color: var(--text); font-weight: 600; }
+
+    .capability-card {
+      border-color: #bfdbfe;
+      border-left: 1px solid #bfdbfe;
+      border-radius: 8px;
+      background: #f8fbff;
+    }
+
+    .capability-icon {
+      border-radius: 10px;
+      background: var(--blue);
+    }
+
+    .stepbar {
+      gap: 8px;
+      padding: 8px;
+      border-color: var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+
+    .step {
+      min-width: auto;
+      padding: 7px 12px;
+      border: 1px solid #d4dbe8;
+      border-radius: 999px;
+      background: #fff;
+    }
+
+    .step::after { display: none; }
+    .step-index { width: 20px; height: 20px; background: #98a2b3; }
+    .step.active { border-color: var(--blue); color: var(--blue); background: #eaf2ff; }
+
+    .condition-box {
+      border-color: var(--line);
+      border-radius: 8px;
+      background: #f8fafc;
+    }
+
+    .remove-condition {
+      border-color: #fac5c5;
+      border-radius: 8px;
+      color: var(--red);
+      background: #fff;
+    }
+
+    .drawer-mask,
+    .modal-mask { background: rgba(15,23,42,.42); }
+    .drawer {
+      position: fixed;
+      width: min(920px, 88vw);
+      box-shadow: 0 12px 30px rgba(31,41,55,.12);
+    }
+
+    .drawer-header {
+      min-height: 62px;
+      padding: 14px 20px;
+      border-bottom-color: var(--line);
+    }
+
+    .drawer-header h2 { font-size: 18px; font-weight: 800; }
+    .drawer-body { padding: 18px 20px 28px; }
+    .drawer-section {
+      margin-bottom: 14px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .drawer-section h3 {
+      margin: 0;
+      padding: 11px 14px;
+      border-bottom: 1px solid var(--line);
+      background: #f8fafc;
+    }
+
+    .drawer-section > .key-values,
+    .drawer-section > .table-wrap,
+    .drawer-section > .timeline { margin: 14px; }
+    .key-values { border-color: var(--line); border-radius: 8px; overflow: hidden; }
+    .key-value { border-bottom-color: var(--line); }
+    .key-value span:first-child { background: #f8fafc; }
+
+    .modal {
+      width: min(680px, calc(100vw - 40px));
+      padding: 0;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(31,41,55,.12);
+    }
+
+    .modal h2 { padding: 16px 18px; border-bottom: 1px solid var(--line); font-size: 17px; }
+    .modal > p,
+    .modal > .warning-note { margin-right: 18px; margin-left: 18px; }
+    .modal > p { margin-top: 18px; }
+    .modal-actions { margin-top: 18px; padding: 14px 18px; border-top: 1px solid var(--line); }
+    .toast { border-radius: 8px; background: #101828; box-shadow: 0 12px 30px rgba(31,41,55,.12); }
+
+    @media (max-width: 1500px) {
+      .stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <div class="admin-shell">
+    <aside class="admin-side">
+      <div class="admin-logo"><span class="admin-logo-mark">NN</span>NN Activity Admin</div>
+      <div class="admin-search"><input id="menuSearch" placeholder="搜索菜单"></div>
+
+      <div class="admin-menu-title">营销活动管理</div>
+      <button class="admin-menu-item active" data-section="activities"><span class="menu-dot"></span>活动注册管理</button>
+
+      <div class="admin-menu-title">基础配置</div>
+      <button class="admin-menu-item" data-section="indicators"><span class="menu-dot"></span>业务指标库</button>
+      <button class="admin-menu-item disabled"><span class="menu-dot"></span>系统操作日志</button>
+
+      <div class="side-note">当前登录角色<strong>平台运营</strong></div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <div class="crumb">营销活动管理 / <strong id="crumbText">活动注册管理</strong></div>
+          <div class="system-name">NN 营销活动组件管理后台</div>
+        </div>
+        <div class="admin-user"><div class="avatar-circle">运</div><span>平台运营</span></div>
+      </header>
+
+      <nav class="admin-tabs" id="subTabs"></nav>
+
+      <section class="admin-content">
+        <div class="page active" id="page-activity-list" data-section="activities">
+          <div class="page-title">
+            <div>
+              <h1>活动注册管理</h1>
+              <p>统一维护活动主数据、业务来源、生命周期和启用能力，为任务及外部系统提供唯一活动主键。</p>
+            </div>
+            <div class="actions"><button class="btn blue" data-action="new-activity">创建活动</button></div>
+          </div>
+
+          <div class="stats">
+            <div class="stat-card"><span>全部活动</span><strong id="activityTotalCount">0</strong><small>含历史归档活动</small></div>
+            <div class="stat-card"><span>进行中</span><strong id="activityRunningCount">0</strong><small>当前时间处于活动周期</small></div>
+            <div class="stat-card"><span>未开始</span><strong id="activityUpcomingCount">0</strong><small>含已发布与草稿活动</small></div>
+            <div class="stat-card"><span>已暂停</span><strong id="activityPausedCount">0</strong><small>运行影响规则待确认</small></div>
+            <div class="stat-card"><span>本月新增</span><strong>4</strong><small>示例数据</small></div>
+          </div>
+
+          <div class="toolbar">
+            <input class="input" id="activityKeyword" placeholder="活动ID / 活动名称">
+            <select class="select" id="activitySource"><option value="">全部业务来源</option><option>PUBG社区</option><option>无畏契约社区</option><option>NN平台</option></select>
+            <select class="select" id="activityStatus"><option value="">全部管理状态</option><option>草稿</option><option>已发布</option><option>已暂停</option><option>已归档</option></select>
+            <select class="select" id="activityPhase"><option value="">全部运行阶段</option><option>未开始</option><option>进行中</option><option>已结束</option></select>
+            <button class="btn blue" id="activitySearch">搜索</button>
+            <button class="btn ghost" id="activityReset">重置</button>
+          </div>
+
+          <div class="table-wrap">
+            <table class="table" id="activityTable">
+              <thead><tr><th style="width:132px">活动ID</th><th style="width:220px">活动名称</th><th style="width:120px">业务来源</th><th style="width:190px">活动时间</th><th style="width:90px">管理状态</th><th style="width:90px">运行阶段</th><th style="width:120px">已接入组件</th><th style="width:84px">负责人</th><th style="width:100px">操作</th></tr></thead>
+              <tbody id="activityTableBody"></tbody>
+            </table>
+          </div>
+          <div class="pagination"><span id="activityListTotal">共 0 条</span><span>‹</span><strong>1</strong><span>›</span><span>10 条/页</span></div>
+        </div>
+
+        <div class="page" id="page-activity-create" data-section="activities">
+          <div class="page-title">
+            <div><h1 id="activityFormTitle">创建活动</h1><p id="activityFormSubtitle">注册活动主数据。任务将在活动创建后按需配置，不在此处选择组件。</p></div>
+            <div class="actions"><button class="btn ghost" data-page="activity-list">取消</button><button class="btn blue" id="saveActivity">保存草稿</button><button class="btn green" id="publishActivity">保存并发布</button></div>
+          </div>
+
+          <div class="info-note"><strong>说明</strong>活动创建后生成全局唯一 activity_id；组件需在活动详情中显式添加，添加后即为已启用。创建任务不会自动建立组件关系。</div>
+          <div class="form-stack">
+            <section class="rule-card">
+              <div class="section-title"><h2>基础信息</h2><span>用于活动识别、查询与责任归属</span></div>
+              <div class="form-grid">
+                <div class="form-row"><label class="required">活动名称</label><input class="input" id="activityNameInput" value="战区行动-极速突围3.0"></div>
+                <div class="form-row"><label class="required">业务域</label><select class="select" id="activityDomainInput"><option>游戏社区活动</option><option>语音社交活动</option><option>平台综合活动</option></select></div>
+                <div class="form-row"><label class="required">所属产品</label><select class="select" id="activityProductInput"><option>PUBG社区</option><option>无畏契约社区</option><option>NN平台</option></select></div>
+                <div class="form-row"><label class="required">责任部门</label><input class="input" id="activityDepartmentInput" value="社区运营中心"></div>
+                <div class="form-row"><label class="required">负责人</label><input class="input" id="activityOwnerInput" value="陆壮"></div>
+                <div class="form-row full"><label>活动说明</label><textarea class="textarea" id="activityDescriptionInput">PUBG暑期主题运营活动，通过单次任务与每日任务提升新用户转化和游戏活跃。</textarea></div>
+              </div>
+            </section>
+
+            <section class="rule-card">
+              <div class="section-title"><h2>业务来源</h2><span>用于跨系统去重和查询</span></div>
+              <div class="form-grid">
+                <div class="form-row"><label class="required">来源系统</label><select class="select" id="activitySourceSystemInput"><option>NN运营后台</option><option>外部业务系统</option><option>历史活动迁移</option></select></div>
+                <div class="form-row"><label>来源业务ID</label><input class="input" id="activitySourceBizIdInput" value="PUBG-SUMMER-2026-03"><span class="hint">同一来源系统下不可重复。</span></div>
+                <div class="form-row"><label>业务标签</label><input class="input" id="activityTagsInput" value="PUBG, 暑期, 拉活"></div>
+              </div>
+            </section>
+
+            <section class="rule-card">
+              <div class="section-title"><h2>活动生命周期</h2><span>运行阶段由活动时间自动计算</span></div>
+              <div class="form-grid">
+                <div class="form-row"><label class="required">开始时间</label><input class="input" id="activityStartInput" type="datetime-local" value="2026-08-08T00:00"></div>
+                <div class="form-row"><label class="required">结束时间</label><input class="input" id="activityEndInput" type="datetime-local" value="2026-08-31T23:59"></div>
+                <div class="form-row"><label class="required">时区</label><select class="select"><option>Asia/Shanghai (UTC+8)</option></select></div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="page" id="page-activity-detail" data-section="activities">
+          <div class="page-title">
+            <div><h1 id="activityDetailTitle">活动详情</h1><p id="activityDetailMeta"></p></div>
+            <div class="actions"><button class="btn ghost" data-page="activity-list">返回活动列表</button><button class="btn ghost" id="editActivityButton" data-action="edit-activity">编辑</button><button class="btn blue" id="pauseActivityButton" data-action="pause-activity">暂停活动</button></div>
+          </div>
+
+          <div class="toolbar"><span class="badge live" id="activityDetailStatus">已发布</span><span class="badge blue" id="activityDetailPhase">进行中</span><span class="muted" id="activityDetailVersion"></span></div>
+          <nav class="activity-context-tabs" data-activity-context-nav></nav>
+          <div class="form-stack">
+            <section class="rule-card activity-detail-panel" data-activity-detail-panel="basic">
+              <div class="section-title"><h2>活动主数据</h2><span>唯一活动主键可供其他系统查询</span></div>
+              <dl class="details-grid" id="activityDetails"></dl>
+            </section>
+
+            <section class="rule-card activity-detail-panel" data-activity-detail-panel="components" hidden>
+              <div class="section-title"><div><h2>组件管理</h2><p>组件实例只能在当前活动下创建和配置</p></div><span>后续抽奖、拉新、兑换等组件均在此扩展</span></div>
+              <div id="componentManagement"></div>
+            </section>
+
+            <section class="rule-card activity-detail-panel" data-activity-detail-panel="logs" hidden>
+              <div class="section-title"><div><h2>活动操作日志</h2><p>记录后台人员对活动、组件与任务定义的关键变更</p></div><span>与用户参与事件分开存储</span></div>
+              <div class="info-note" style="margin:14px"><strong>审计边界</strong>本表只记录配置和状态操作；用户任务进度、领取和奖励履约事件统一在“活动参与数据”中查询。</div>
+              <div class="toolbar" style="margin:0 14px 14px">
+                <select class="select" id="eventObjectFilter"><option value="">全部对象</option><option>活动</option><option>任务组件</option><option>任务链</option><option>任务</option></select>
+                <input class="input" id="eventKeyword" placeholder="事件ID / 对象ID / 用户ID">
+                <button class="btn blue" data-action="filter-events">搜索</button><button class="btn ghost" data-action="reset-events">重置</button>
+              </div>
+              <div class="table-wrap"><table class="table"><thead><tr><th style="width:150px">操作时间</th><th style="width:148px">日志ID</th><th style="width:92px">对象</th><th style="width:160px">对象ID</th><th style="width:118px">操作类型</th><th style="width:130px">操作人</th><th>变更摘要</th><th style="width:82px">结果</th></tr></thead><tbody id="eventTableBody"></tbody></table></div>
+            </section>
+          </div>
+        </div>
+
+        <div class="page" id="page-task-list" data-section="activities">
+          <nav class="activity-context-tabs" data-activity-context-nav></nav>
+          <div class="page-title">
+            <div><h1>任务组件</h1><p>当前页面是“活动详情 → 组件管理 → 任务组件”的下钻配置页，任务不可脱离活动单独创建。</p></div>
+            <div class="actions"><button class="btn blue" id="newTaskButton" data-action="new-task">新增任务</button></div>
+          </div>
+          <div class="scope-note" id="taskScopeNote"></div>
+          <div class="stats">
+            <div class="stat-card"><span>全部任务</span><strong id="taskTotal">0</strong><small>当前组件实例</small></div>
+            <div class="stat-card"><span>已发布</span><strong id="taskPublished">0</strong><small>任务定义状态</small></div>
+            <div class="stat-card"><span>草稿</span><strong id="taskDraft">0</strong><small>未参与运行计算</small></div>
+            <div class="stat-card"><span>任务链</span><strong id="taskChainCount">0</strong><small>组件内顺序关系</small></div>
+            <div class="stat-card"><span>组件状态</span><strong id="taskComponentStatus" style="font-size:20px">—</strong><small>添加后即启用</small></div>
+          </div>
+          <section class="rule-card" style="margin-bottom:18px">
+            <div class="section-title"><div><h2>任务链管理</h2><p>任务链是组件内独立对象，统一维护顺序、重置周期和推进上限</p></div><button class="btn blue small" id="newTaskChainButton" data-action="new-task-chain">新建任务链</button></div>
+            <div class="table-wrap"><table class="table"><thead><tr><th style="width:150px">任务链ID</th><th style="width:170px">任务链名称</th><th style="width:110px">重置周期</th><th style="width:130px">推进上限</th><th>链内任务顺序</th><th style="width:90px">状态</th><th style="width:120px">操作</th></tr></thead><tbody id="taskChainTableBody"></tbody></table></div>
+          </section>
+          <div class="toolbar"><input class="input" id="taskKeyword" placeholder="任务ID / 任务名称"><select class="select" id="taskCategory"><option value="">全部任务分类</option><option>活动任务</option><option>日常任务</option><option>成就任务</option></select><select class="select" id="taskStatus"><option value="">全部状态</option><option>已发布</option><option>草稿</option><option>已停用</option></select><button class="btn blue" data-action="filter-task-list">搜索</button><button class="btn ghost" data-action="reset-task-list">重置</button></div>
+          <div class="table-wrap"><table class="table"><thead><tr><th style="width:112px">任务ID</th><th style="width:150px">任务名称</th><th style="width:86px">分类</th><th style="width:88px">周期</th><th>完成条件</th><th style="width:130px">奖励</th><th style="width:110px">有效时间</th><th style="width:80px">版本</th><th style="width:80px">状态</th><th style="width:180px">操作</th></tr></thead><tbody id="taskTableBody"></tbody></table></div>
+          <div class="pagination"><span id="taskListTotal">共 0 条</span><span>‹</span><strong>1</strong><span>›</span><span>20 条/页</span></div>
+        </div>
+
+        <div class="page" id="page-task-editor" data-section="activities">
+          <nav class="activity-context-tabs" data-activity-context-nav></nav>
+          <div class="page-title">
+            <div><h1 id="taskEditorTitle">编辑任务</h1><p id="taskEditorMeta"></p></div>
+            <div class="actions"><button class="btn ghost" data-action="back-task-list">取消</button><button class="btn blue" id="saveTask">保存草稿</button><button class="btn green" id="openPublishModal">发布新版本</button></div>
+          </div>
+          <div class="scope-note" id="taskEditorContext"></div>
+          <div class="warning-note" id="taskEditorWarning">已发布任务修改后将生成新版本，变更影响范围为所有用户。进行中进度迁移、已完成快照与领取处理策略待确认，本原型不写死。</div>
+          <div class="stepbar"><div class="step done"><span class="step-index">1</span>基础与周期</div><div class="step active"><span class="step-index">2</span>资格与条件</div><div class="step"><span class="step-index">3</span>任务链</div><div class="step"><span class="step-index">4</span>奖励规则</div></div>
+
+          <div class="form-stack">
+            <section class="rule-card">
+              <div class="section-title"><h2>基础信息</h2><span>任务分类仅用于后台管理，不决定运行逻辑</span></div>
+              <div class="form-grid">
+                <div class="form-row"><label class="required">任务名称</label><input class="input" id="taskNameInput" value="每日游戏"></div>
+                <div class="form-row"><label>任务编码</label><input class="input" id="taskCodeInput" value="PUBG_DAILY_PLAY" disabled></div>
+                <div class="form-row"><label class="required">任务分类</label><select class="select" id="taskCategoryInput"><option>活动任务</option><option selected>日常任务</option><option>成就任务</option></select></div>
+                <div class="form-row"><label>后台优先级</label><input class="input" id="taskPriorityInput" type="number" value="60"></div>
+                <div class="form-row full"><label>任务说明</label><textarea class="textarea" id="taskDescriptionInput">每日通过NN启动PUBG并累计存活5分钟。</textarea></div>
+              </div>
+            </section>
+
+            <section class="rule-card">
+              <div class="section-title"><h2>时间与重置周期</h2><span>决定任务什么时候可参与，以及多久产生一个新周期</span></div>
+              <div class="form-grid">
+                <div class="form-row"><label class="required">任务有效时间</label><select class="select" id="taskTimeMode"><option selected>继承活动时间</option><option>自定义时间</option></select></div>
+                <div class="form-row custom-time" hidden><label class="required">任务开始时间</label><input class="input" type="datetime-local" value="2026-07-06T00:00"></div>
+                <div class="form-row custom-time" hidden><label class="required">任务结束时间</label><input class="input" type="datetime-local" value="2026-07-31T23:59"></div>
+                <div class="form-row"><label class="required">数据统计时间</label><select class="select"><option selected>与任务有效时间一致</option><option>自定义统计时间</option></select><span class="hint">是否回算任务生效前数据待研发评审确认。</span></div>
+                <div class="form-row"><label class="required">重置周期</label><select class="select" id="taskResetCycleInput"><option>不重置</option><option selected>自然日</option><option>自然周</option><option>自然月</option><option>自定义周期</option></select></div>
+                <div class="form-row"><label class="required">周期时区</label><select class="select"><option>继承活动：Asia/Shanghai</option></select></div>
+                <div class="form-row"><label class="required">单周期完成上限</label><input class="input" type="number" value="1"></div>
+                <div class="form-row"><label>活动总完成上限</label><input class="input" placeholder="不填写表示不限制"></div>
+              </div>
+            </section>
+
+            <section class="rule-card">
+              <div class="section-title"><div><h2>参与资格</h2><p>只决定任务是否适用于用户，不增加任务进度</p></div><div class="choice-row"><label><input type="radio" name="eligibilityRelation" checked>全部满足</label><label><input type="radio" name="eligibilityRelation">任一满足</label></div></div>
+              <div class="form-grid">
+                <div class="form-row"><label class="required">用户范围</label><select class="select" id="taskUserScopeInput"><option selected>全部用户</option><option>新注册用户</option><option>N天回归用户</option><option>白名单用户</option></select></div>
+                <div class="form-row"><label>账号资格</label><select class="select" id="taskAccountEligibilityInput"><option>不限</option><option selected>已绑定PUBG游戏账号</option><option>已绑定腾讯LLink</option></select></div>
+                <div class="form-row"><label>名单过滤</label><select class="select" id="taskListFilterInput"><option selected>不配置</option><option>排除黑名单</option><option>仅白名单</option></select></div>
+              </div>
+            </section>
+
+            <section class="rule-card">
+              <div class="section-title"><div><h2>完成条件</h2><p>从指标库选择指标，统计方式、单位和过滤维度由指标定义约束</p></div><div class="inline"><select class="select" style="width:150px"><option>全部满足 ALL</option><option>任一满足 ANY</option></select><button class="btn blue small" id="addCondition">添加条件</button></div></div>
+              <div id="conditions">
+                <div class="condition-box condition-item">
+                  <div class="condition-head"><strong>条件 1</strong><span class="metric-chip" id="metricDelay">数据更新：分钟级，预计延迟5分钟</span></div>
+                  <div class="condition-grid">
+                    <div><span class="mini-label">条件角色</span><select class="select condition-role"><option selected>主进度条件</option><option>伴随约束条件</option></select></div>
+                    <div><span class="mini-label">任务指标</span><select class="select indicator-select"><option value="survival" selected>游戏存活时长</option><option value="kills">游戏击杀数</option><option value="matches">完成游戏对局</option><option value="loginDays">累计登录自然日</option><option value="voice">语音时长</option><option value="bound">游戏账号绑定</option><option value="checkin">独立签到成功</option><option value="activityJoin">活动报名成功</option><option value="llinkBound">LLink绑定成功</option><option value="inviteValid">有效邀请用户数</option></select></div>
+                    <div><span class="mini-label">统计方式</span><select class="select aggregation-select"><option selected>数值求和</option></select></div>
+                    <div><span class="mini-label">判断符</span><select class="select"><option selected>大于等于 ≥</option><option>大于 &gt;</option><option>等于 =</option></select></div>
+                    <div><span class="mini-label">目标值</span><input class="input target-input" value="300"></div>
+                    <div><span class="mini-label">过滤维度</span><select class="select filter-select"><option>游戏=PUBG</option><option>启动来源=NN</option></select></div>
+                    <button class="remove-condition" title="删除条件">删除</button>
+                  </div>
+                  <span class="hint condition-summary">当前规则：活动用户每日在PUBG有效对局中的存活时长累计达到300秒。</span>
+                </div>
+              </div>
+            </section>
+
+            <section class="rule-card">
+              <div class="section-title"><h2>前置任务与任务链</h2><span>用于阶梯任务、累计签到等顺序关系</span></div>
+              <div class="form-grid">
+                <div class="form-row"><label class="required">前置关系</label><select class="select" id="prerequisiteMode"><option selected>无前置任务</option><option>前置任务已完成</option><option>前置任务已领取</option></select></div>
+                <div class="form-row prerequisite-extra" hidden><label class="required">选择前置任务</label><select class="select" id="prerequisiteTaskSelect"></select></div>
+                <div class="form-row prerequisite-extra" hidden><label class="required">多个前置任务关系</label><select class="select"><option>全部满足</option><option>任一满足</option></select></div>
+                <div class="form-row"><label>所属任务链</label><select class="select" id="taskChainSelect"><option selected>不加入任务链</option></select><span class="hint">任务链需先在当前组件的“任务链管理”中创建。</span></div>
+                <div class="form-row"><label>链内顺序</label><input class="input" placeholder="加入任务链后填写"></div>
+                <div class="form-row"><label>每周期最多推进</label><input class="input" placeholder="例如：1步/自然日"></div>
+              </div>
+            </section>
+
+            <section class="rule-card">
+              <div class="section-title"><div><h2>奖品 List 与领取规则</h2><p>任务组件只维护奖品需求和发放规则，实际发放由现有奖励服务处理</p></div><div class="actions"><button class="btn ghost small" id="validateRewards">校验奖励ID</button><button class="btn blue small" id="addReward">添加奖品</button></div></div>
+              <div class="reward-list" id="rewardList">
+                <div class="reward-row reward-item">
+                  <div><span class="mini-label">奖品类型</span><select class="select"><option selected>活动积分</option><option>NN虚拟道具</option><option>N豆</option><option>CDK</option><option>实物</option></select></div>
+                  <div><span class="mini-label">奖品名称</span><input class="input" value="极速突围活动积分"></div>
+                  <div><span class="mini-label">奖品标识</span><input class="input" value="POINT_BREAKOUT_2026"></div>
+                  <div><span class="mini-label">数量</span><input class="input" type="number" value="10"></div>
+                  <button class="remove-condition remove-reward">删除</button>
+                </div>
+                <div class="reward-row reward-item">
+                  <div><span class="mini-label">奖品类型</span><select class="select"><option>活动积分</option><option selected>NN虚拟道具</option><option>N豆</option><option>CDK</option><option>实物</option></select></div>
+                  <div><span class="mini-label">奖品名称</span><input class="input" value="抽奖券"></div>
+                  <div><span class="mini-label">奖品标识</span><input class="input" value="DRAW_TICKET_BREAKOUT"></div>
+                  <div><span class="mini-label">数量</span><input class="input" type="number" value="1"></div>
+                  <button class="remove-condition remove-reward">删除</button>
+                </div>
+              </div>
+              <div class="form-grid" style="margin-top:20px">
+                <div class="form-row"><label class="required">领取方式</label><select class="select"><option>自动领取</option><option selected>手动领取</option></select></div>
+                <div class="form-row"><label class="required">领取截止时间</label><select class="select"><option selected>与活动结束时间一致</option><option>自定义时间</option></select></div>
+                <div class="form-row"><label class="required">每次完成发放次数</label><input class="input" type="number" value="1"></div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="page" id="page-indicator-list" data-section="indicators">
+          <div class="page-title"><div><h1>业务指标库</h1><p>统一查看系统可判断的业务指标。活动运营在任务条件中引用指标，不直接修改数据口径。</p></div><div class="actions"><span class="badge gray">当前角色：只读</span></div></div>
+          <div class="info-note"><strong>权限说明</strong>指标定义、数据映射和启停由数据产品与开发维护；平台运营仅可查看并在任务中引用可用指标。</div>
+          <div class="stats">
+            <div class="stat-card"><span>全部指标</span><strong>26</strong><small>覆盖6个业务域</small></div><div class="stat-card"><span>可用</span><strong>24</strong><small>可被新任务选择</small></div><div class="stat-card"><span>已停用</span><strong>2</strong><small>保留历史定义</small></div><div class="stat-card"><span>分钟级及以内</span><strong>15</strong><small>适合及时反馈任务</small></div><div class="stat-card"><span>使用中</span><strong>18</strong><small>已被42个任务引用</small></div>
+          </div>
+          <div class="toolbar"><input class="input" id="indicatorKeyword" placeholder="指标编码 / 指标名称"><select class="select" id="indicatorDomain"><option value="">全部业务域</option><option>用户生命周期</option><option>游戏</option><option>语音社交</option><option>账号</option><option>营销</option><option>增长</option><option>直播</option></select><select class="select" id="indicatorFreshness"><option value="">全部更新频率</option><option>实时</option><option>分钟级</option><option>小时级</option><option>次日</option></select><select class="select" id="indicatorStatus"><option value="">全部状态</option><option>可用</option><option>已停用</option></select><button class="btn blue" id="indicatorSearch">搜索</button><button class="btn ghost" id="indicatorReset">重置</button></div>
+          <div class="table-wrap"><table class="table"><thead><tr><th style="width:210px">指标编码</th><th style="width:150px">指标名称</th><th style="width:120px">业务域</th><th>业务定义</th><th style="width:100px">数据类型</th><th style="width:110px">更新频率</th><th style="width:105px">负责人</th><th style="width:80px">状态</th><th style="width:110px">操作</th></tr></thead><tbody id="indicatorTableBody">
+            <tr><td class="text-left">GAME_SURVIVAL_DURATION</td><td><strong>游戏存活时长</strong></td><td>游戏</td><td class="text-left">用户在指定游戏有效对局中的累计存活秒数</td><td>数值 / 秒</td><td>分钟级</td><td>数据产品-陈浩</td><td><span class="badge live">可用</span></td><td><span class="link" data-indicator="survival">查看详情</span></td></tr>
+            <tr><td class="text-left">GAME_KILL_COUNT</td><td><strong>游戏击杀数</strong></td><td>游戏</td><td class="text-left">用户在指定游戏有效对局中的有效击杀数量</td><td>数值 / 次</td><td>分钟级</td><td>数据产品-陈浩</td><td><span class="badge live">可用</span></td><td><span class="link" data-indicator="kills">查看详情</span></td></tr>
+            <tr><td class="text-left">USER_LOGIN_DISTINCT_DAY</td><td><strong>累计登录自然日</strong></td><td>用户生命周期</td><td class="text-left">用户在统计周期内发生登录行为的去重自然日数量</td><td>数值 / 天</td><td>小时级</td><td>数据产品-周宁</td><td><span class="badge live">可用</span></td><td><span class="link" data-indicator="loginDays">查看详情</span></td></tr>
+            <tr><td class="text-left">VOICE_DURATION</td><td><strong>语音时长</strong></td><td>语音社交</td><td class="text-left">用户在有效语音房内的累计有效语音秒数</td><td>数值 / 秒</td><td>实时</td><td>数据产品-李卓</td><td><span class="badge live">可用</span></td><td><span class="link" data-indicator="voice">查看详情</span></td></tr>
+            <tr><td class="text-left">GAME_ACCOUNT_BOUND</td><td><strong>游戏账号绑定</strong></td><td>账号</td><td class="text-left">用户成功绑定指定游戏账号</td><td>事件 / 布尔</td><td>实时</td><td>数据产品-王辰</td><td><span class="badge live">可用</span></td><td><span class="link" data-indicator="bound">查看详情</span></td></tr>
+            <tr><td class="text-left">DAILY_CHECKIN_SUCCESS</td><td><strong>独立签到成功</strong></td><td>营销</td><td class="text-left">用户在指定签到渠道完成一次有效签到行为</td><td>事件 / 布尔</td><td>实时</td><td>数据产品-余意</td><td><span class="badge live">可用</span></td><td><span class="link" data-indicator="checkin">查看详情</span></td></tr>
+            <tr><td class="text-left">LIVE_WATCH_DURATION_OLD</td><td><strong>旧版直播观看时长</strong></td><td>直播</td><td class="text-left">旧版直播数据口径，仅供历史任务查询</td><td>数值 / 秒</td><td>次日</td><td>数据产品-陈浩</td><td><span class="badge gray">已停用</span></td><td><span class="link" data-indicator="liveOld">查看详情</span></td></tr>
+          </tbody></table></div>
+          <div class="pagination"><span>共 26 条</span><span>‹</span><strong>1</strong><span>2</span><span>3</span><span>›</span><span>10 条/页</span></div>
+        </div>
+
+        <div class="page" id="page-data-overview" data-section="activities">
+          <nav class="activity-context-tabs" data-activity-context-nav></nav>
+          <div class="page-title"><div><h1>活动参与数据</h1><p>查询当前活动内用户任务进度、领取状态与奖励履约结果；三类状态分别维护、关联查询。</p></div><div class="actions"><button class="btn ghost" data-action="view-current-activity">返回活动详情</button><button class="btn blue" id="exportData">导出当前结果</button></div></div>
+          <div class="scope-note"><strong id="dataActivityName">当前活动</strong><span class="muted" id="dataActivityMeta"></span></div>
+          <div class="stats"><div class="stat-card"><span>参与用户数</span><strong id="participantCount">0</strong><small>活动口径</small></div><div class="stat-card"><span>任务完成人数</span><strong id="completedUserCount">0</strong><small>任务进度状态</small></div><div class="stat-card"><span>待领取</span><strong id="pendingClaimCount">0</strong><small>领取状态</small></div><div class="stat-card"><span>已领取</span><strong id="claimedCount">0</strong><small>领取状态</small></div><div class="stat-card"><span>履约失败</span><strong class="danger" id="fulfillmentFailedCount">0</strong><small>奖励服务状态</small></div></div>
+          <div class="toolbar"><input class="input" id="participantKeyword" placeholder="用户ID / 任务ID / 任务名称"><select class="select" id="progressStatusFilter"><option value="">全部任务进度状态</option><option>进行中</option><option>已完成</option><option>已过期</option></select><select class="select" id="claimStatusFilter"><option value="">全部领取状态</option><option>未满足领取</option><option>待领取</option><option>已领取</option></select><select class="select" id="rewardStatusFilter"><option value="">全部履约状态</option><option>未触发</option><option>发放中</option><option>发放成功</option><option>发放失败</option></select><button class="btn blue" data-action="filter-participants">搜索</button><button class="btn ghost" data-action="reset-participants">重置</button></div>
+          <div class="section-title" style="margin-top:18px"><div><h2>用户任务实例</h2><p>一行代表一个用户在一个任务周期内的状态快照；用户维度汇总在“用户详情”中查看</p></div></div>
+          <div class="table-wrap"><table class="table"><thead><tr><th style="width:130px">用户ID</th><th style="width:112px">首次参与</th><th style="width:112px">最近参与</th><th style="width:150px">任务</th><th style="width:150px">任务周期</th><th style="width:105px">任务进度状态</th><th style="width:100px">当前进度</th><th style="width:100px">领取状态</th><th style="width:110px">奖励履约状态</th><th style="width:150px">奖励服务单号</th><th style="width:92px">操作</th></tr></thead><tbody id="participantTableBody"></tbody></table></div>
+          <div class="pagination"><span id="participantTotal">共 0 条</span><span>‹</span><strong>1</strong><span>2</span><span>3</span><span>...</span><span>›</span><span>20 条/页</span></div>
+          <section class="rule-card" style="margin-top:18px">
+            <div class="section-title"><div><h2>统一参与事件日志</h2><p>跨任务、领取、奖励及后续组件建立用户活动时间线</p></div><span>仅作关联索引，组件明细仍是状态真相</span></div>
+            <div class="table-wrap"><table class="table"><thead><tr><th style="width:150px">发生时间</th><th style="width:145px">事件ID</th><th style="width:125px">用户ID</th><th style="width:190px">组件实例</th><th style="width:150px">业务对象</th><th style="width:190px">事件类型</th><th>事件摘要</th><th style="width:90px">结果</th></tr></thead><tbody id="participantEventTableBody"></tbody></table></div>
+          </section>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="drawer-mask" id="drawerMask">
+    <aside class="drawer">
+      <div class="drawer-header"><div><h2 id="drawerTitle">详情</h2><p id="drawerSubtitle"></p></div><button class="close-btn" id="closeDrawer">×</button></div>
+      <div class="drawer-body" id="drawerBody"></div>
+    </aside>
+  </div>
+
+  <div class="modal-mask" id="publishModal">
+    <div class="modal">
+      <h2>确认发布任务新版本？</h2>
+      <p>新版本的变更影响范围为所有用户。任务进度迁移、已完成用户快照与领取处理策略仍待确认，发布前需由开发按最终规则实现。</p>
+      <div class="warning-note" style="margin:16px 0 0">本原型只表达配置入口与影响范围，不预设“清零”或“保留进度”的底层处理。</div>
+      <div class="modal-actions"><button class="btn ghost" id="cancelPublish">取消</button><button class="btn green" id="confirmPublish">确认发布</button></div>
+    </div>
+  </div>
+
+  <div class="modal-mask" id="confirmModal">
+    <div class="modal">
+      <h2 id="confirmModalTitle">确认操作</h2>
+      <p id="confirmModalBody"></p>
+      <div class="modal-actions"><button class="btn ghost" id="cancelConfirm">取消</button><button class="btn blue" id="confirmAction">确认</button></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">操作成功</div>
+
+  <script>
+    (() => {
+      const activities = [
+        {
+          id: "ACT20260706002",
+          name: "战区行动-巅峰对决",
+          subtitle: "七月流火，巅峰对决",
+          domain: "游戏社区活动",
+          product: "PUBG社区",
+          sourceSystem: "NN运营后台",
+          sourceBizId: "PUBG-PEAK-2026",
+          department: "社区运营中心",
+          owner: "李默",
+          start: "2026-07-06 00:00",
+          end: "2026-07-31 23:59",
+          status: "已发布",
+          phase: "进行中",
+          version: "活动配置 V3",
+          updatedAt: "2026-07-28 18:32",
+          component: { id: "CMP_TASK_20260706002", status: "已启用", createdAt: "2026-07-01 11:05", createdBy: "李默", updatedAt: "2026-07-28 18:30" },
+          metrics: { participants: 38426, completed: 27913, pendingClaim: 1264, claimed: 24186, fulfillmentFailed: 23 }
+        },
+        {
+          id: "ACT20260618001",
+          name: "战区行动-极速突围2.0",
+          subtitle: "六战狂欢，爽领百万福利",
+          domain: "游戏社区活动",
+          product: "PUBG社区",
+          sourceSystem: "NN运营后台",
+          sourceBizId: "PUBG-BREAKOUT-2026-02",
+          department: "社区运营中心",
+          owner: "陆壮",
+          start: "2026-06-18 00:00",
+          end: "2026-06-30 23:59",
+          status: "已发布",
+          phase: "已结束",
+          version: "活动配置 V3",
+          updatedAt: "2026-06-30 23:59",
+          component: { id: "CMP_TASK_20260618001", status: "已启用", createdAt: "2026-06-12 11:05", createdBy: "余意", updatedAt: "2026-06-30 23:59" },
+          metrics: { participants: 32618, completed: 24230, pendingClaim: 0, claimed: 22091, fulfillmentFailed: 4 }
+        },
+        {
+          id: "ACT20260712001",
+          name: "无畏契约三周年",
+          subtitle: "三年同声，开黑无畏",
+          domain: "游戏社区活动",
+          product: "无畏契约社区",
+          sourceSystem: "NN运营后台",
+          sourceBizId: "VAL-3RD-ANNIVERSARY",
+          department: "社区运营中心",
+          owner: "余意",
+          start: "2026-07-12 00:00",
+          end: "2026-07-19 23:59",
+          status: "已发布",
+          phase: "已结束",
+          version: "活动配置 V2",
+          updatedAt: "2026-07-19 23:59",
+          component: { id: "CMP_TASK_20260712001", status: "已启用", createdAt: "2026-07-08 16:20", createdBy: "余意", updatedAt: "2026-07-19 23:59" },
+          metrics: { participants: 18590, completed: 13942, pendingClaim: 0, claimed: 12804, fulfillmentFailed: 7 }
+        },
+        {
+          id: "ACT20260801001",
+          name: "暑期语音开黑季",
+          subtitle: "组队开黑赢限定奖励",
+          domain: "语音社交活动",
+          product: "NN平台",
+          sourceSystem: "NN运营后台",
+          sourceBizId: "VOICE-SUMMER-2026",
+          department: "语音运营中心",
+          owner: "王齐",
+          start: "2026-08-01 00:00",
+          end: "2026-08-20 23:59",
+          status: "已发布",
+          phase: "未开始",
+          version: "活动配置 V1",
+          updatedAt: "2026-07-27 15:10",
+          component: null,
+          metrics: { participants: 0, completed: 0, pendingClaim: 0, claimed: 0, fulfillmentFailed: 0 }
+        },
+        {
+          id: "ACT20250318001",
+          name: "PUBG入驻活动",
+          subtitle: "一切就绪，等你来",
+          domain: "游戏社区活动",
+          product: "PUBG社区",
+          sourceSystem: "历史活动迁移",
+          sourceBizId: "PUBG-ONBOARD-2025",
+          department: "社区运营中心",
+          owner: "余意",
+          start: "2025-03-18 00:00",
+          end: "2025-04-08 23:59",
+          status: "已归档",
+          phase: "已结束",
+          version: "活动配置 V1",
+          updatedAt: "2025-04-10 10:00",
+          component: { id: "CMP_TASK_20250318001", status: "已停用", createdAt: "2025-03-10 09:00", createdBy: "余意", updatedAt: "2025-04-10 10:00" },
+          metrics: { participants: 21806, completed: 15632, pendingClaim: 0, claimed: 14390, fulfillmentFailed: 0 }
+        },
+        {
+          id: "ACT20260718001",
+          name: "仲夏语音挑战",
+          subtitle: "开麦组队，挑战仲夏",
+          domain: "语音社交活动",
+          product: "NN平台",
+          sourceSystem: "外部业务系统",
+          sourceBizId: "VOICE-MIDSUMMER-2026",
+          department: "语音运营中心",
+          owner: "王齐",
+          start: "2026-07-18 00:00",
+          end: "2026-08-05 23:59",
+          status: "已暂停",
+          phase: "进行中",
+          version: "活动配置 V2",
+          updatedAt: "2026-07-29 09:10",
+          component: { id: "CMP_TASK_20260718001", status: "已启用", createdAt: "2026-07-15 15:20", createdBy: "王齐", updatedAt: "2026-07-28 16:40" },
+          metrics: { participants: 8920, completed: 4701, pendingClaim: 318, claimed: 4218, fulfillmentFailed: 2 }
+        },
+        {
+          id: "ACT20260808001",
+          name: "战区行动-极速突围3.0",
+          subtitle: "PUBG暑期主题运营活动",
+          domain: "游戏社区活动",
+          product: "PUBG社区",
+          sourceSystem: "NN运营后台",
+          sourceBizId: "PUBG-SUMMER-2026-03",
+          department: "社区运营中心",
+          owner: "陆壮",
+          start: "2026-08-08 00:00",
+          end: "2026-08-31 23:59",
+          status: "草稿",
+          phase: "未开始",
+          version: "活动配置 V1草稿",
+          updatedAt: "2026-07-29 20:30",
+          component: null,
+          metrics: { participants: 0, completed: 0, pendingClaim: 0, claimed: 0, fulfillmentFailed: 0 }
+        }
+      ];
+
+      const tasks = [
+        { id: "TSK30001", activityId: "ACT20260706002", componentInstanceId: "CMP_TASK_20260706002", name: "每日游戏", code: "PUBG_DAILY_PLAY", category: "日常任务", cycle: "自然日", condition: "PUBG有效对局存活时长求和 ≥ 300秒", reward: "活动积分×10、抽奖券×1", effective: "继承活动", version: "V3", status: "已发布", updatedAt: "2026-07-28 18:30", chainId: "" },
+        { id: "TSK30002", activityId: "ACT20260706002", componentInstanceId: "CMP_TASK_20260706002", name: "每日击杀", code: "PUBG_DAILY_KILL", category: "日常任务", cycle: "自然日", condition: "PUBG有效击杀数求和 ≥ 1", reward: "活动积分×10", effective: "继承活动", version: "V2", status: "已发布", updatedAt: "2026-07-28 17:40", chainId: "" },
+        { id: "TSK30003", activityId: "ACT20260706002", componentInstanceId: "CMP_TASK_20260706002", name: "巅峰三局", code: "PUBG_THREE_MATCH", category: "活动任务", cycle: "不重置", condition: "PUBG有效对局完成次数 ≥ 3", reward: "活动积分×100", effective: "继承活动", version: "V1", status: "已发布", updatedAt: "2026-07-06 09:20", chainId: "CHN30001" },
+        { id: "TSK30004", activityId: "ACT20260706002", componentInstanceId: "CMP_TASK_20260706002", name: "七日集结", code: "PUBG_LOGIN_7D", category: "成就任务", cycle: "不重置", condition: "累计登录自然日 ≥ 7", reward: "限定徽章×1", effective: "继承活动", version: "V2", status: "已发布", updatedAt: "2026-07-20 14:15", chainId: "CHN30001" },
+        { id: "TSK30005", activityId: "ACT20260706002", componentInstanceId: "CMP_TASK_20260706002", name: "周末语音协作", code: "PUBG_WEEKEND_VOICE", category: "活动任务", cycle: "不重置", condition: "有效语音时长求和 ≥ 600秒", reward: "活动积分×200", effective: "07-30至07-31", version: "V1草稿", status: "草稿", updatedAt: "2026-07-29 10:20", chainId: "" },
+        { id: "TSK20021", activityId: "ACT20260618001", componentInstanceId: "CMP_TASK_20260618001", name: "集结报道", code: "BREAKOUT_REGISTER", category: "活动任务", cycle: "不重置", condition: "完成活动报名事件 = 已发生", reward: "活动积分×50", effective: "继承活动", version: "V2", status: "已发布", updatedAt: "2026-06-18 09:00", chainId: "" },
+        { id: "TSK20022", activityId: "ACT20260618001", componentInstanceId: "CMP_TASK_20260618001", name: "绑定游戏账号", code: "BREAKOUT_BIND", category: "活动任务", cycle: "不重置", condition: "PUBG账号绑定事件 = 已发生", reward: "活动积分×50", effective: "继承活动", version: "V1", status: "已发布", updatedAt: "2026-06-18 09:00", chainId: "" },
+        { id: "TSK41001", activityId: "ACT20260712001", componentInstanceId: "CMP_TASK_20260712001", name: "完成LLink绑定", code: "VAL_LINK_BOUND", category: "活动任务", cycle: "不重置", condition: "腾讯LLink绑定事件 = 已发生", reward: "周年积分×50", effective: "继承活动", version: "V1", status: "已发布", updatedAt: "2026-07-12 00:10", chainId: "" },
+        { id: "TSK41002", activityId: "ACT20260712001", componentInstanceId: "CMP_TASK_20260712001", name: "无畏首胜", code: "VAL_FIRST_WIN", category: "活动任务", cycle: "不重置", condition: "无畏契约有效胜利对局次数 ≥ 1", reward: "周年积分×100", effective: "继承活动", version: "V2", status: "已发布", updatedAt: "2026-07-13 11:00", chainId: "" },
+        { id: "TSK41003", activityId: "ACT20260712001", componentInstanceId: "CMP_TASK_20260712001", name: "邀请开黑伙伴", code: "VAL_INVITE_USER", category: "成就任务", cycle: "不重置", condition: "邀请有效新用户数 ≥ 1", reward: "抽奖券×2", effective: "继承活动", version: "V1", status: "已发布", updatedAt: "2026-07-12 00:10", chainId: "" },
+        { id: "TSK41004", activityId: "ACT20260712001", componentInstanceId: "CMP_TASK_20260712001", name: "周年签到", code: "VAL_CHECKIN", category: "日常任务", cycle: "自然日", condition: "独立签到成功事件 = 已发生", reward: "周年积分×10", effective: "继承活动", version: "V1", status: "已停用", updatedAt: "2026-07-20 10:00", chainId: "" },
+        { id: "TSK15001", activityId: "ACT20250318001", componentInstanceId: "CMP_TASK_20250318001", name: "入驻首登", code: "PUBG_FIRST_LOGIN", category: "活动任务", cycle: "不重置", condition: "PUBG社区首次登录事件 = 已发生", reward: "N豆×50", effective: "继承活动", version: "V1", status: "已停用", updatedAt: "2025-04-10 10:00", chainId: "" },
+        { id: "TSK50001", activityId: "ACT20260718001", componentInstanceId: "CMP_TASK_20260718001", name: "每日有效开麦", code: "VOICE_DAILY_ACTIVE", category: "日常任务", cycle: "自然日", condition: "有效语音时长求和 ≥ 300秒", reward: "N豆×20", effective: "继承活动", version: "V1", status: "已发布", updatedAt: "2026-07-28 16:40", chainId: "" }
+      ];
+
+      const taskChains = [
+        { id: "CHN30001", activityId: "ACT20260706002", componentInstanceId: "CMP_TASK_20260706002", name: "巅峰进阶任务链", cycle: "不重置", maxAdvance: "不限制", steps: "巅峰三局（TSK30003）→ 七日集结（TSK30004）", status: "已启用" }
+      ];
+
+      const participants = {
+        ACT20260706002: [
+          { userId: "NN62187357", first: "07-06 09:12", last: "07-29 10:03", taskId: "TSK30001", taskName: "每日游戏", progressStatus: "已完成", progress: "326 / 300秒", claimStatus: "已领取", rewardStatus: "发放成功", rewardOrder: "RWD20260729108321" },
+          { userId: "NN80862315", first: "07-06 10:26", last: "07-29 09:48", taskId: "TSK30002", taskName: "每日击杀", progressStatus: "已完成", progress: "1 / 1", claimStatus: "已领取", rewardStatus: "发放失败", rewardOrder: "RWD20260729099812" },
+          { userId: "NN39711420", first: "07-07 14:32", last: "07-29 09:21", taskId: "TSK30003", taskName: "巅峰三局", progressStatus: "进行中", progress: "2 / 3局", claimStatus: "未满足领取", rewardStatus: "未触发", rewardOrder: "—" },
+          { userId: "NN72950318", first: "07-08 08:05", last: "07-28 23:56", taskId: "TSK30004", taskName: "七日集结", progressStatus: "已完成", progress: "7 / 7天", claimStatus: "待领取", rewardStatus: "未触发", rewardOrder: "—" }
+        ],
+        ACT20260618001: [
+          { userId: "NN51008321", first: "06-18 08:10", last: "06-30 20:06", taskId: "TSK20022", taskName: "绑定游戏账号", progressStatus: "已完成", progress: "1 / 1", claimStatus: "已领取", rewardStatus: "发放成功", rewardOrder: "RWD20260630209011" }
+        ],
+        ACT20260712001: [
+          { userId: "NN72016388", first: "07-12 00:22", last: "07-19 21:10", taskId: "TSK41002", taskName: "无畏首胜", progressStatus: "已完成", progress: "1 / 1", claimStatus: "已领取", rewardStatus: "发放成功", rewardOrder: "RWD20260719217301" }
+        ],
+        ACT20260718001: [
+          { userId: "NN63821009", first: "07-18 10:20", last: "07-28 16:30", taskId: "TSK50001", taskName: "每日有效开麦", progressStatus: "已完成", progress: "405 / 300秒", claimStatus: "待领取", rewardStatus: "未触发", rewardOrder: "—" }
+        ]
+      };
+
+      const operationLogs = {
+        ACT20260706002: [
+          { time: "2026-07-28 18:32", id: "OPL2607281832", object: "任务", objectId: "TSK30001", type: "发布版本", operator: "李默", summary: "发布任务 V3；影响范围为所有用户，进度迁移规则待确认", result: "成功" },
+          { time: "2026-07-20 14:15", id: "OPL2607201415", object: "任务", objectId: "TSK30004", type: "编辑", operator: "李默", summary: "调整任务链成员顺序并发布 V2", result: "成功" },
+          { time: "2026-07-01 11:05", id: "OPL2607011105", object: "任务组件", objectId: "CMP_TASK_20260706002", type: "添加组件", operator: "李默", summary: "在活动内显式添加任务组件", result: "成功" },
+          { time: "2026-06-28 10:22", id: "OPL2606281022", object: "活动", objectId: "ACT20260706002", type: "创建", operator: "李默", summary: "创建活动并生成 activity_id", result: "成功" }
+        ],
+        ACT20260801001: [
+          { time: "2026-07-27 15:10", id: "OPL2607271510", object: "活动", objectId: "ACT20260801001", type: "发布", operator: "王齐", summary: "活动配置 V1 发布，当前尚未添加任务组件", result: "成功" }
+        ]
+      };
+
+      const participationEvents = {
+        ACT20260706002: [
+          { time: "2026-07-29 10:03:18", id: "EVT260729100318", userId: "NN62187357", component: "TASK", objectId: "RWD20260729108321", eventType: "REWARD_FULFILLMENT_UPDATED", summary: "奖励服务返回发放成功", result: "成功" },
+          { time: "2026-07-29 10:03:02", id: "EVT260729100302", userId: "NN62187357", component: "TASK", objectId: "TSK30001", eventType: "CLAIM_REQUESTED", summary: "用户领取“每日游戏”奖励", result: "受理" },
+          { time: "2026-07-29 10:01:46", id: "EVT260729100146", userId: "NN62187357", component: "TASK", objectId: "TSK30001", eventType: "TASK_COMPLETED", summary: "存活时长累计 326 秒，达到目标 300 秒", result: "成功" },
+          { time: "2026-07-29 10:01:45", id: "EVT260729100145", userId: "NN62187357", component: "TASK", objectId: "TSK30001", eventType: "TASK_PROGRESS_UPDATED", summary: "GAME_SURVIVAL_DURATION 增加 40 秒；来源事件 DWD_GAME_88219034", result: "成功" },
+          { time: "2026-07-29 09:48:16", id: "EVT260729094816", userId: "NN80862315", component: "TASK", objectId: "RWD20260729099812", eventType: "REWARD_FULFILLMENT_UPDATED", summary: "奖励服务返回发放失败，待奖励服务处理", result: "失败" }
+        ],
+        ACT20260618001: [
+          { time: "2026-06-30 20:06:11", id: "EVT260630200611", userId: "NN51008321", component: "TASK", objectId: "TSK20022", eventType: "TASK_COMPLETED", summary: "PUBG账号绑定事件校验通过", result: "成功" }
+        ],
+        ACT20260712001: [
+          { time: "2026-07-19 21:10:31", id: "EVT260719211031", userId: "NN72016388", component: "TASK", objectId: "TSK41002", eventType: "REWARD_FULFILLMENT_UPDATED", summary: "周年积分奖励发放成功", result: "成功" }
+        ],
+        ACT20260718001: [
+          { time: "2026-07-28 16:30:08", id: "EVT260728163008", userId: "NN63821009", component: "TASK", objectId: "TSK50001", eventType: "TASK_COMPLETED", summary: "有效语音时长累计 405 秒，达到目标 300 秒", result: "成功" }
+        ]
+      };
+
+      const indicatorMeta = {
+        survival: { name: "游戏存活时长", code: "GAME_SURVIVAL_DURATION", domain: "游戏", definition: "用户在指定游戏有效对局中的累计存活秒数", type: "数值", unit: "秒", aggregation: "数值求和、最大值", operators: ">、≥、=、≤、<", filters: "游戏、启动来源、对局模式", freshness: "分钟级，预计延迟5分钟", owner: "数据产品-陈浩", state: "可用", usage: "完成条件" },
+        kills: { name: "游戏击杀数", code: "GAME_KILL_COUNT", domain: "游戏", definition: "用户在指定游戏有效对局中的有效击杀数量", type: "数值", unit: "次", aggregation: "数值求和、最大值", operators: ">、≥、=", filters: "游戏、启动来源、对局模式", freshness: "分钟级，预计延迟5分钟", owner: "数据产品-陈浩", state: "可用", usage: "完成条件" },
+        matches: { name: "完成游戏对局", code: "GAME_MATCH_COMPLETED", domain: "游戏", definition: "用户完成满足有效口径的游戏对局", type: "事件", unit: "次", aggregation: "次数", operators: ">、≥、=", filters: "游戏、启动来源、对局模式", freshness: "分钟级，预计延迟5分钟", owner: "数据产品-陈浩", state: "可用", usage: "完成条件" },
+        loginDays: { name: "累计登录自然日", code: "USER_LOGIN_DISTINCT_DAY", domain: "用户生命周期", definition: "用户在统计周期内发生登录行为的去重自然日数量", type: "数值", unit: "天", aggregation: "自然日去重计数", operators: ">、≥、=", filters: "客户端、登录渠道", freshness: "小时级，预计延迟1小时", owner: "数据产品-周宁", state: "可用", usage: "完成条件" },
+        voice: { name: "语音时长", code: "VOICE_DURATION", domain: "语音社交", definition: "用户在有效语音房内的累计有效语音秒数", type: "数值", unit: "秒", aggregation: "数值求和", operators: ">、≥、=", filters: "房间类型、游戏社区、房间人数", freshness: "实时，预计延迟30秒", owner: "数据产品-李卓", state: "可用", usage: "完成条件" },
+        bound: { name: "游戏账号绑定", code: "GAME_ACCOUNT_BOUND", domain: "账号", definition: "用户成功绑定指定游戏账号", type: "事件", unit: "布尔", aggregation: "是否发生", operators: "已发生、未发生", filters: "游戏、绑定渠道", freshness: "实时", owner: "数据产品-王辰", state: "可用", usage: "参与资格或完成条件" },
+        checkin: { name: "独立签到成功", code: "DAILY_CHECKIN_SUCCESS", domain: "营销", definition: "用户在指定签到渠道完成一次有效签到行为", type: "事件", unit: "布尔", aggregation: "是否发生", operators: "已发生、未发生", filters: "签到渠道", freshness: "实时", owner: "数据产品-余意", state: "可用", usage: "完成条件" },
+        activityJoin: { name: "活动报名成功", code: "ACTIVITY_JOIN_SUCCESS", domain: "营销", definition: "用户完成指定活动的报名或首次参与动作", type: "事件", unit: "布尔", aggregation: "是否发生", operators: "已发生、未发生", filters: "活动ID、参与渠道", freshness: "实时", owner: "数据产品-余意", state: "可用", usage: "完成条件" },
+        llinkBound: { name: "LLink绑定成功", code: "LLINK_ACCOUNT_BOUND", domain: "账号", definition: "用户成功绑定指定腾讯 LLink 账号", type: "事件", unit: "布尔", aggregation: "是否发生", operators: "已发生、未发生", filters: "游戏、绑定渠道", freshness: "实时", owner: "数据产品-王辰", state: "可用", usage: "参与资格或完成条件" },
+        inviteValid: { name: "有效邀请用户数", code: "VALID_INVITED_USER_COUNT", domain: "增长", definition: "用户通过指定渠道邀请并满足有效口径的新用户数量", type: "数值", unit: "人", aggregation: "去重计数", operators: ">、≥、=", filters: "邀请渠道、用户类型", freshness: "小时级", owner: "数据产品-周宁", state: "可用", usage: "完成条件" },
+        liveOld: { name: "旧版直播观看时长", code: "LIVE_WATCH_DURATION_OLD", domain: "直播", definition: "旧版直播数据口径，仅供历史任务查询", type: "数值", unit: "秒", aggregation: "数值求和", operators: ">、≥、=", filters: "直播间", freshness: "次日", owner: "数据产品-陈浩", state: "已停用", usage: "仅历史解释" }
+      };
+
+      const pageConfig = {
+        activities: { crumb: "活动注册管理", tabs: [{ label: "活动列表", page: "activity-list" }, { label: "创建 / 编辑活动", page: "activity-create" }, { label: "活动详情", page: "activity-detail" }] },
+        indicators: { crumb: "业务指标库", tabs: [{ label: "指标列表", page: "indicator-list" }] }
+      };
+
+      const state = { page: "activity-list", activityId: "ACT20260706002", taskId: "TSK30001", activityDetailTab: "basic", activityFormMode: "create", editingActivityId: null };
+      let toastTimer;
+      let confirmHandler = null;
+
+      const $ = id => document.getElementById(id);
+      const escapeHtml = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;" }[char]));
+      const activityById = id => activities.find(item => item.id === id);
+      const currentActivity = () => activityById(state.activityId) || activities[0];
+      const tasksForActivity = id => {
+        const componentId = activityById(id)?.component?.id;
+        return componentId ? tasks.filter(item => item.activityId === id && item.componentInstanceId === componentId) : [];
+      };
+      const chainsForActivity = id => {
+        const componentId = activityById(id)?.component?.id;
+        return componentId ? taskChains.filter(item => item.activityId === id && item.componentInstanceId === componentId) : [];
+      };
+      const badgeClass = value => ({
+        "已发布": "live", "已启用": "live", "已完成": "live", "已领取": "live", "发放成功": "live", "成功": "live",
+        "进行中": "blue", "发放中": "blue", "受理": "blue",
+        "未开始": "warn", "待领取": "warn", "已暂停": "warn",
+        "失败": "red", "发放失败": "red",
+        "草稿": "gray", "已结束": "gray", "已归档": "gray", "已停用": "gray", "未添加": "gray", "未满足领取": "gray", "未触发": "gray", "已过期": "gray"
+      }[value] || "gray");
+      const badge = value => `<span class="badge ${badgeClass(value)}">${escapeHtml(value)}</span>`;
+      const numberText = value => Number(value || 0).toLocaleString("zh-CN");
+      const nowText = () => "2026-07-29 20:55";
+
+      function showToast(message) {
+        const toast = $("toast");
+        toast.textContent = message;
+        toast.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove("show"), 2400);
+      }
+
+      function openConfirm(title, body, handler, confirmText = "确认") {
+        $("confirmModalTitle").textContent = title;
+        $("confirmModalBody").textContent = body;
+        $("confirmAction").textContent = confirmText;
+        confirmHandler = handler;
+        $("confirmModal").classList.add("open");
+      }
+
+      function closeConfirm() {
+        $("confirmModal").classList.remove("open");
+        confirmHandler = null;
+      }
+
+      function openDrawer(title, subtitle, body) {
+        $("drawerTitle").textContent = title;
+        $("drawerSubtitle").textContent = subtitle;
+        $("drawerBody").innerHTML = body;
+        $("drawerMask").classList.add("open");
+      }
+
+      function closeDrawer() {
+        $("drawerMask").classList.remove("open");
+      }
+
+      function renderTabs(section, activePage) {
+        if (["activity-detail", "task-list", "task-editor", "data-overview"].includes(activePage)) {
+          $("subTabs").innerHTML = "";
+          return;
+        }
+        $("subTabs").innerHTML = pageConfig[section].tabs
+          .map(tab => `<button class="admin-tab ${tab.page === activePage ? "active" : ""}" data-page="${tab.page}">${tab.label}</button>`)
+          .join("");
+      }
+
+      function renderActivityContextNavigation(activeKey) {
+        const tabs = [
+          { key: "basic", label: "基础信息" },
+          { key: "components", label: "组件管理" },
+          { key: "data", label: "参与数据" },
+          { key: "logs", label: "操作日志" }
+        ];
+        document.querySelectorAll("[data-activity-context-nav]").forEach(nav => {
+          nav.innerHTML = tabs.map(tab => `<button class="activity-context-tab ${tab.key === activeKey ? "active" : ""}" data-action="activity-context-tab" data-context-tab="${tab.key}">${tab.label}</button>`).join("");
+        });
+      }
+
+      function navigate(page, context = {}) {
+        if (context.activityId) state.activityId = context.activityId;
+        if (Object.prototype.hasOwnProperty.call(context, "taskId")) state.taskId = context.taskId;
+        const target = $(`page-${page}`);
+        if (!target) return;
+
+        if (page === "task-list" || page === "task-editor") {
+          const activity = currentActivity();
+          if (!activity.component) {
+            state.activityDetailTab = "components";
+            state.page = "activity-detail";
+            document.querySelectorAll(".page").forEach(item => item.classList.toggle("active", item.id === "page-activity-detail"));
+            activateSection("activities", "activity-detail");
+            renderActivityDetail();
+            showToast("该活动尚未添加任务组件，请先在组件管理中显式添加");
+            return;
+          }
+        }
+
+        state.page = page;
+        document.querySelectorAll(".page").forEach(item => item.classList.toggle("active", item === target));
+        const section = target.dataset.section;
+        activateSection(section, page);
+        renderPage(page);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+
+      function activateSection(section, page) {
+        document.querySelectorAll(".admin-menu-item[data-section]").forEach(item => item.classList.toggle("active", item.dataset.section === section));
+        const activityContextLabel = {
+          "activity-detail": state.activityDetailTab === "components" ? "组件管理" : state.activityDetailTab === "logs" ? "操作日志" : "基础信息",
+          "task-list": "组件管理 / 任务组件",
+          "task-editor": "组件管理 / 任务组件 / 任务配置",
+          "data-overview": "参与数据"
+        }[page];
+        $("crumbText").textContent = activityContextLabel
+          ? `${currentActivity().name} / ${activityContextLabel}`
+          : pageConfig[section].crumb;
+        renderTabs(section, page);
+      }
+
+      function renderPage(page) {
+        if (page === "activity-list") renderActivityList();
+        if (page === "activity-create") renderActivityForm();
+        if (page === "activity-detail") renderActivityDetail();
+        if (page === "task-list") renderTaskList();
+        if (page === "task-editor") renderTaskEditor();
+        if (page === "data-overview") renderDataPage();
+      }
+
+      function toDateTimeLocal(value) {
+        return String(value || "").replace(" ", "T");
+      }
+
+      function fromDateTimeLocal(value) {
+        return String(value || "").replace("T", " ");
+      }
+
+      function phaseByTime(start, end) {
+        const now = nowText();
+        if (end < now) return "已结束";
+        if (start > now) return "未开始";
+        return "进行中";
+      }
+
+      function nextVersion(value, prefix = "") {
+        const current = Number((String(value || "").match(/\d+/) || ["0"])[0]);
+        return `${prefix}V${current + 1}`;
+      }
+
+      function activityFormValues(activity) {
+        const draft = activity?.pendingDraft || activity;
+        return {
+          name: draft?.name || "新建营销活动",
+          domain: draft?.domain || "游戏社区活动",
+          product: draft?.product || "PUBG社区",
+          department: draft?.department || "社区运营中心",
+          owner: draft?.owner || "陆壮",
+          description: draft?.description || draft?.subtitle || "用于演示活动注册与后续组件显式添加流程。",
+          sourceSystem: draft?.sourceSystem || "NN运营后台",
+          sourceBizId: draft?.sourceBizId || `DEMO-ACT-${String(activities.length + 1).padStart(3, "0")}`,
+          tags: draft?.tags || "示例, 待完善",
+          start: draft?.start || "2026-08-08 00:00",
+          end: draft?.end || "2026-08-31 23:59"
+        };
+      }
+
+      function renderActivityForm() {
+        const activity = state.activityFormMode === "edit" ? activityById(state.editingActivityId) : null;
+        if (state.activityFormMode === "edit" && !activity) {
+          state.activityFormMode = "create";
+          state.editingActivityId = null;
+        }
+        const editing = state.activityFormMode === "edit" && activity;
+        const values = activityFormValues(editing ? activity : null);
+        $("activityFormTitle").textContent = editing ? `编辑活动：${activity.name}` : "创建活动";
+        $("activityFormSubtitle").textContent = editing
+          ? `活动ID：${activity.id}。修改已发布活动时先形成草稿，发布后才替换线上配置。`
+          : "注册活动主数据。任务将在活动创建后按需配置，不在此处选择组件。";
+        $("activityNameInput").value = values.name;
+        $("activityDomainInput").value = values.domain;
+        $("activityProductInput").value = values.product;
+        $("activityDepartmentInput").value = values.department;
+        $("activityOwnerInput").value = values.owner;
+        $("activityDescriptionInput").value = values.description;
+        $("activitySourceSystemInput").value = values.sourceSystem;
+        $("activitySourceBizIdInput").value = values.sourceBizId;
+        $("activityTagsInput").value = values.tags;
+        $("activityStartInput").value = toDateTimeLocal(values.start);
+        $("activityEndInput").value = toDateTimeLocal(values.end);
+        $("publishActivity").textContent = editing && activity.status !== "草稿" ? "发布新版本" : "保存并发布";
+      }
+
+      function collectActivityForm() {
+        return {
+          name: $("activityNameInput").value.trim(),
+          domain: $("activityDomainInput").value,
+          product: $("activityProductInput").value,
+          department: $("activityDepartmentInput").value.trim(),
+          owner: $("activityOwnerInput").value.trim(),
+          description: $("activityDescriptionInput").value.trim(),
+          sourceSystem: $("activitySourceSystemInput").value,
+          sourceBizId: $("activitySourceBizIdInput").value.trim(),
+          tags: $("activityTagsInput").value.trim(),
+          start: fromDateTimeLocal($("activityStartInput").value),
+          end: fromDateTimeLocal($("activityEndInput").value)
+        };
+      }
+
+      function validateActivityForm(values) {
+        if (!values.name || !values.sourceSystem || !values.sourceBizId || !values.start || !values.end) {
+          showToast("请填写活动名称、业务来源和活动时间");
+          return false;
+        }
+        if (values.start >= values.end) {
+          showToast("活动结束时间必须晚于开始时间");
+          return false;
+        }
+        const duplicate = activities.find(item =>
+          item.id !== state.editingActivityId &&
+          item.sourceSystem === values.sourceSystem &&
+          item.sourceBizId === values.sourceBizId
+        );
+        if (duplicate) {
+          showToast(`来源业务ID已被活动 ${duplicate.id} 使用`);
+          return false;
+        }
+        return true;
+      }
+
+      function applyActivityValues(activity, values) {
+        Object.assign(activity, values, {
+          subtitle: values.description || values.name,
+          phase: phaseByTime(values.start, values.end),
+          updatedAt: nowText()
+        });
+      }
+
+      function createActivity(values, publish) {
+        const datePart = nowText().slice(0, 10).replace(/-/g, "");
+        let sequence = activities.length + 1;
+        let id = `ACT${datePart}${String(sequence).padStart(3, "0")}`;
+        while (activityById(id)) {
+          sequence += 1;
+          id = `ACT${datePart}${String(sequence).padStart(3, "0")}`;
+        }
+        const activity = {
+          id,
+          ...values,
+          subtitle: values.description || values.name,
+          status: publish ? "已发布" : "草稿",
+          phase: phaseByTime(values.start, values.end),
+          version: publish ? "活动配置 V1" : "活动配置 V1草稿",
+          updatedAt: nowText(),
+          component: null,
+          metrics: { participants: 0, completed: 0, pendingClaim: 0, claimed: 0, fulfillmentFailed: 0 }
+        };
+        activities.unshift(activity);
+        state.activityId = id;
+        state.activityDetailTab = "basic";
+        state.editingActivityId = id;
+        appendOperation(id, "活动", id, publish ? "创建并发布" : "创建草稿", "创建活动主数据；未创建任何组件关系");
+        return activity;
+      }
+
+      function saveActivityForm(publish) {
+        const values = collectActivityForm();
+        if (!validateActivityForm(values)) return;
+        const activity = state.activityFormMode === "edit" ? activityById(state.editingActivityId) : null;
+        if (!activity) {
+          const created = createActivity(values, publish);
+          showToast(`${publish ? "活动已发布" : "活动草稿已保存"}：${created.id}`);
+          setTimeout(() => navigate("activity-detail"), 500);
+          return;
+        }
+
+        if (!publish && activity.status !== "草稿") {
+          activity.pendingDraft = values;
+          activity.pendingVersion = `${nextVersion(activity.version, "活动配置 ")}草稿`;
+          appendOperation(activity.id, "活动", activity.id, "保存配置草稿", `保存 ${activity.pendingVersion}；线上仍为 ${activity.version}`);
+          showToast(`${activity.pendingVersion} 已保存，线上配置未变更`);
+          return;
+        }
+
+        applyActivityValues(activity, values);
+        if (publish) {
+          activity.version = activity.status === "草稿"
+            ? "活动配置 V1"
+            : nextVersion(activity.version, "活动配置 ");
+          if (activity.status !== "已暂停") activity.status = "已发布";
+          delete activity.pendingDraft;
+          delete activity.pendingVersion;
+          appendOperation(activity.id, "活动", activity.id, "发布配置", `发布 ${activity.version}；组件关系保持不变`);
+        } else {
+          activity.version = "活动配置 V1草稿";
+          appendOperation(activity.id, "活动", activity.id, "保存草稿", "保存活动主数据草稿；未创建任何组件关系");
+        }
+        showToast(publish ? `${activity.version} 已发布` : `活动草稿已保存：${activity.id}`);
+        setTimeout(() => navigate("activity-detail"), 500);
+      }
+
+      function renderActivityList() {
+        $("activityTotalCount").textContent = activities.length;
+        $("activityRunningCount").textContent = activities.filter(item => item.phase === "进行中").length;
+        $("activityUpcomingCount").textContent = activities.filter(item => item.phase === "未开始").length;
+        $("activityPausedCount").textContent = activities.filter(item => item.status === "已暂停").length;
+
+        const keyword = $("activityKeyword").value.trim().toLowerCase();
+        const source = $("activitySource").value;
+        const status = $("activityStatus").value;
+        const phase = $("activityPhase").value;
+        const rows = activities.filter(item =>
+          (!keyword || `${item.id} ${item.name}`.toLowerCase().includes(keyword)) &&
+          (!source || item.product === source) &&
+          (!status || item.status === status) &&
+          (!phase || item.phase === phase)
+        );
+        $("activityListTotal").textContent = `共 ${rows.length} 条`;
+
+        $("activityTableBody").innerHTML = rows.map(activity => {
+          const activityTasks = tasksForActivity(activity.id);
+          const componentCell = activity.component
+            ? `<strong>任务组件</strong><br>${badge(activity.component.status)} <span class="weak">${activityTasks.length} 个任务</span>`
+            : `${badge("未添加")}<br><span class="weak">无组件实例</span>`;
+          return `<tr data-name="${escapeHtml(`${activity.id} ${activity.name}`)}" data-source="${escapeHtml(activity.product)}" data-status="${escapeHtml(activity.status)}" data-phase="${escapeHtml(activity.phase)}">
+            <td class="nowrap">${activity.id}</td>
+            <td class="text-left"><strong>${escapeHtml(activity.name)}</strong><br><span class="weak">${escapeHtml(activity.subtitle)}</span></td>
+            <td>${escapeHtml(activity.product)}</td>
+            <td>${escapeHtml(activity.start)}<br>至 ${escapeHtml(activity.end)}</td>
+            <td>${badge(activity.status)}</td>
+            <td>${badge(activity.phase)}</td>
+            <td>${componentCell}</td>
+            <td>${escapeHtml(activity.owner)}</td>
+            <td><div class="table-actions">
+              <span class="link" data-action="view-activity" data-activity-id="${activity.id}">详情</span>
+            </div></td>
+          </tr>`;
+        }).join("") || `<tr><td colspan="9"><div class="empty-box">未找到符合条件的活动</div></td></tr>`;
+      }
+
+      function renderActivityDetail() {
+        const activity = currentActivity();
+        const componentTasks = tasksForActivity(activity.id);
+        renderActivityContextNavigation(state.activityDetailTab);
+        document.querySelectorAll("[data-activity-detail-panel]").forEach(panel => {
+          panel.hidden = panel.dataset.activityDetailPanel !== state.activityDetailTab;
+        });
+        $("activityDetailTitle").textContent = activity.name;
+        $("activityDetailMeta").textContent = `活动ID：${activity.id}　来源：${activity.sourceSystem} / ${activity.sourceBizId}`;
+        $("activityDetailStatus").className = `badge ${badgeClass(activity.status)}`;
+        $("activityDetailStatus").textContent = activity.status;
+        $("activityDetailPhase").className = `badge ${badgeClass(activity.phase)}`;
+        $("activityDetailPhase").textContent = activity.phase;
+        $("activityDetailVersion").textContent = `${activity.version}${activity.pendingVersion ? ` · 待发布 ${activity.pendingVersion}` : ""} · 最近更新 ${activity.updatedAt}`;
+        $("editActivityButton").disabled = activity.status === "已归档";
+        $("editActivityButton").title = activity.status === "已归档" ? "已归档活动不可编辑" : "";
+        $("pauseActivityButton").textContent = activity.status === "已暂停" ? "恢复活动" : "暂停活动";
+        $("pauseActivityButton").disabled = !["已发布", "已暂停"].includes(activity.status);
+        $("pauseActivityButton").title = $("pauseActivityButton").disabled ? "仅已发布或已暂停活动可执行该操作" : "";
+        $("activityDetails").innerHTML = [
+          ["活动ID", activity.id],
+          ["活动名称", activity.name],
+          ["业务域", activity.domain],
+          ["所属产品", activity.product],
+          ["来源系统", activity.sourceSystem],
+          ["来源业务ID", activity.sourceBizId],
+          ["活动时间", `${activity.start} 至 ${activity.end}`],
+          ["时区", "Asia/Shanghai"],
+          ["负责人", `${activity.owner} / ${activity.department}`]
+        ].map(([label, value]) => `<div class="detail-item"><dt>${label}</dt><dd>${escapeHtml(value)}</dd></div>`).join("");
+
+        if (!activity.component) {
+          $("componentManagement").innerHTML = `<div class="empty-box">
+            <h3 style="margin:0 0 8px;color:#344054">尚未添加任务组件</h3>
+            <p style="margin:0 0 16px">创建活动不会自动绑定组件。显式添加后系统生成 component_instance_id，并立即进入已启用状态。</p>
+            <button class="btn blue" data-action="add-task-component" ${activity.status === "已归档" ? "disabled" : ""}>添加任务组件</button>
+          </div><div class="info-note" style="margin:14px"><strong>扩展原则</strong>一期仅开放任务组件；后续抽奖、拉新、兑换等组件继续添加在当前区域，不新增独立业务菜单。</div>`;
+        } else {
+          $("componentManagement").innerHTML = `<div class="capability-card">
+            <div class="capability-main">
+              <div class="capability-icon">任</div>
+              <div>
+                <h3>任务组件 ${badge(activity.component.status)}</h3>
+                <p>组件实例ID：${activity.component.id}</p>
+                <p>任务 ${componentTasks.length} 个 · 已发布 ${componentTasks.filter(item => item.status === "已发布").length} 个 · 草稿 ${componentTasks.filter(item => item.status === "草稿").length} 个</p>
+                <p>创建：${activity.component.createdAt} / ${activity.component.createdBy}　最近更新：${activity.component.updatedAt}</p>
+              </div>
+            </div>
+            <div class="actions">
+              <button class="btn ghost" data-action="toggle-component" ${activity.status === "已归档" ? "disabled" : ""}>${activity.component.status === "已启用" ? "停用组件" : "重新启用"}</button>
+              <button class="btn blue" data-action="enter-task-component">${activity.component.status === "已启用" ? "进入任务配置" : "查看任务配置"}</button>
+            </div>
+          </div><div class="info-note" style="margin:14px"><strong>扩展原则</strong>一期仅开放任务组件；后续组件复用同一活动容器和组件管理入口。</div>`;
+        }
+        if (state.activityDetailTab === "logs") renderOperationLogs();
+      }
+
+      function renderOperationLogs() {
+        const activity = currentActivity();
+        const objectFilter = $("eventObjectFilter").value;
+        const keyword = $("eventKeyword").value.trim().toLowerCase();
+        const logs = (operationLogs[activity.id] || []).filter(log =>
+          (!objectFilter || log.object === objectFilter) &&
+          (!keyword || `${log.id} ${log.objectId} ${log.operator} ${log.summary}`.toLowerCase().includes(keyword))
+        );
+        $("eventTableBody").innerHTML = logs.map(log => `<tr>
+          <td>${log.time}</td><td>${log.id}</td><td>${log.object}</td><td>${log.objectId}</td><td>${log.type}</td><td>${log.operator}</td>
+          <td class="text-left">${escapeHtml(log.summary)}</td><td>${badge(log.result)}</td>
+        </tr>`).join("") || `<tr><td colspan="8"><div class="empty-box">当前活动暂无符合条件的操作日志</div></td></tr>`;
+      }
+
+      function renderTaskList() {
+        const activity = currentActivity();
+        if (!activity.component) return;
+        renderActivityContextNavigation("components");
+        const keyword = $("taskKeyword").value.trim().toLowerCase();
+        const category = $("taskCategory").value;
+        const status = $("taskStatus").value;
+        const activityTasks = tasksForActivity(activity.id);
+        const canManage = activity.component.status === "已启用" && activity.status !== "已归档";
+        const rows = activityTasks.filter(task =>
+          (!keyword || `${task.id} ${task.name}`.toLowerCase().includes(keyword)) &&
+          (!category || task.category === category) &&
+          (!status || task.status === status)
+        );
+        $("taskScopeNote").innerHTML = `<strong>所属活动 → 任务组件</strong>${escapeHtml(activity.name)}　<span class="muted">activity_id：${activity.id} · component_instance_id：${activity.component.id} · ${activity.component.status}</span><span class="toolbar-spacer"></span><span class="link" data-action="view-current-activity-detail">返回组件管理</span>`;
+        $("taskTotal").textContent = activityTasks.length;
+        $("taskPublished").textContent = activityTasks.filter(item => item.status === "已发布").length;
+        $("taskDraft").textContent = activityTasks.filter(item => item.status === "草稿").length;
+        $("taskChainCount").textContent = chainsForActivity(activity.id).length;
+        $("taskComponentStatus").textContent = activity.component.status;
+        $("taskComponentStatus").className = activity.component.status === "已启用" ? "" : "danger";
+        $("newTaskButton").disabled = !canManage;
+        $("newTaskChainButton").disabled = !canManage;
+        $("taskListTotal").textContent = `共 ${rows.length} 条`;
+        $("taskTableBody").innerHTML = rows.map(task => `<tr>
+          <td>${task.id}</td><td class="text-left"><strong>${escapeHtml(task.name)}</strong></td><td>${task.category}</td><td>${task.cycle}</td>
+          <td class="text-left">${escapeHtml(task.condition)}</td><td>${escapeHtml(task.reward)}</td><td>${task.effective}</td><td>${task.version}${task.draft ? `<br><span class="weak">${task.draft.version}待发布</span>` : ""}</td><td>${badge(task.status)}</td>
+          <td><div class="table-actions">
+            <span class="link" data-action="edit-task" data-task-id="${task.id}">${canManage && task.status !== "已停用" ? "编辑" : "查看"}</span>
+            ${canManage ? `<span class="link" data-action="copy-task" data-task-id="${task.id}">复制</span>` : ""}
+            ${canManage && task.status !== "草稿" ? `<span class="link" data-action="toggle-task" data-task-id="${task.id}">${task.status === "已停用" ? "启用" : "停用"}</span>` : ""}
+          </div></td>
+        </tr>`).join("") || `<tr><td colspan="10"><div class="empty-box">当前组件暂无符合条件的任务</div></td></tr>`;
+        renderTaskChains();
+      }
+
+      function renderTaskChains() {
+        const chains = chainsForActivity(state.activityId);
+        $("taskChainTableBody").innerHTML = chains.map(chain => `<tr>
+          <td>${chain.id}</td><td>${escapeHtml(chain.name)}</td><td>${chain.cycle}</td><td>${chain.maxAdvance}</td><td class="text-left">${escapeHtml(chain.steps)}</td><td>${badge(chain.status)}</td>
+          <td><span class="link" data-action="view-chain" data-chain-id="${chain.id}">查看详情</span></td>
+        </tr>`).join("") || `<tr><td colspan="7"><div class="empty-box">尚未创建任务链；普通任务可不加入任务链</div></td></tr>`;
+      }
+
+      function metricKeyForTask(task) {
+        if (task?.conditions?.[0]?.metricKey) return task.conditions[0].metricKey;
+        const text = `${task?.code || ""} ${task?.condition || ""}`.toUpperCase();
+        if (text.includes("LLINK")) return "llinkBound";
+        if (text.includes("INVITE") || text.includes("邀请")) return "inviteValid";
+        if (text.includes("REGISTER") || text.includes("报名") || text.includes("FIRST_LOGIN")) return "activityJoin";
+        if (text.includes("CHECKIN") || text.includes("签到")) return "checkin";
+        if (text.includes("BIND") || text.includes("绑定")) return "bound";
+        if (text.includes("VOICE") || text.includes("语音")) return "voice";
+        if (text.includes("KILL") || text.includes("击杀")) return "kills";
+        if (text.includes("MATCH") || text.includes("WIN") || text.includes("对局")) return "matches";
+        if (text.includes("LOGIN") || text.includes("登录")) return "loginDays";
+        return "survival";
+      }
+
+      function conditionConfigsForTask(task, activity) {
+        if (task?.conditions?.length) return task.conditions;
+        const metricKey = metricKeyForTask(task);
+        const meta = indicatorMeta[metricKey];
+        const match = String(task?.condition || "").match(/≥\s*([\d.]+)/);
+        const eventMetric = meta.type === "事件";
+        const filter = activity.product === "PUBG社区"
+          ? "游戏=PUBG"
+          : activity.product === "无畏契约社区"
+            ? "游戏=无畏契约"
+            : activity.product === "NN平台"
+              ? "平台=NN"
+              : "按指标默认口径";
+        return [{
+          role: "主进度条件",
+          metricKey,
+          aggregation: meta.aggregation.split("、")[0],
+          operator: eventMetric ? "等于 =" : "大于等于 ≥",
+          target: eventMetric ? "已发生" : (match?.[1] || "1"),
+          filter
+        }];
+      }
+
+      function rewardConfigsForTask(task) {
+        if (task?.rewardItems?.length) return task.rewardItems;
+        return String(task?.reward || "待配置奖励×1").split("、").map((item, index) => {
+          const match = item.match(/(.+?)×([\d.]+)/);
+          const name = match?.[1] || item;
+          return {
+            type: name.includes("N豆") ? "N豆" : name.includes("积分") ? "活动积分" : "NN虚拟道具",
+            name,
+            rewardId: task?.code ? `DEMO_${task.code}_${index + 1}` : "",
+            quantity: match?.[2] || "1"
+          };
+        });
+      }
+
+      function accountEligibilityFor(activity, task) {
+        if (task?.accountEligibility) return task.accountEligibility;
+        if (["bound", "llinkBound", "activityJoin"].includes(metricKeyForTask(task))) return "不限";
+        if (activity.product === "无畏契约社区") return "已绑定腾讯LLink";
+        if (activity.product === "PUBG社区") return "已绑定PUBG游戏账号";
+        return "不限";
+      }
+
+      function renderTaskEditor() {
+        const activity = currentActivity();
+        const task = tasks.find(item => item.id === state.taskId && item.activityId === activity.id && item.componentInstanceId === activity.component.id);
+        const isNew = !task;
+        const source = task?.draft || task;
+        const readOnly = activity.component.status !== "已启用" || activity.status === "已归档" || task?.status === "已停用";
+        renderActivityContextNavigation("components");
+        $("taskEditorTitle").textContent = isNew ? "新增任务" : `编辑任务：${task.name}`;
+        $("taskEditorMeta").textContent = isNew
+          ? "任务ID将在首次保存后生成"
+          : `任务ID：${task.id}　线上版本：${task.version}　任务状态：${task.status}${task.draft ? `　待发布：${task.draft.version}` : ""}`;
+        $("taskEditorContext").innerHTML = `<strong>所属活动 → 任务组件 → 任务</strong>${escapeHtml(activity.name)}　<span class="muted">activity_id：${activity.id} · component_instance_id：${activity.component.id} · ${activity.component.status}</span><span class="toolbar-spacer"></span><span class="link" data-action="back-task-list">返回任务组件</span>`;
+        $("taskNameInput").value = source?.name || "";
+        $("taskCodeInput").value = task?.code || "首次保存后生成";
+        $("taskCategoryInput").value = source?.category || "活动任务";
+        $("taskPriorityInput").value = source?.priority || "60";
+        $("taskDescriptionInput").value = source?.description || (task ? `完成条件：${task.condition}；奖励：${task.reward}` : "");
+        $("taskResetCycleInput").value = source?.cycle || "不重置";
+        $("taskUserScopeInput").value = source?.userScope || "全部用户";
+        $("taskAccountEligibilityInput").value = accountEligibilityFor(activity, source);
+        $("taskListFilterInput").value = source?.listFilter || "不配置";
+        $("taskTimeMode").value = source?.effective && source.effective !== "继承活动" ? "自定义时间" : "继承活动时间";
+        document.querySelectorAll(".custom-time").forEach(row => row.hidden = $("taskTimeMode").value !== "自定义时间");
+        const customInputs = document.querySelectorAll(".custom-time input");
+        let customStart = activity.start;
+        let customEnd = activity.end;
+        if (source?.effective && source.effective !== "继承活动") {
+          const fullRange = source.effective.split(" 至 ");
+          const shortRange = source.effective.match(/(\d{2}-\d{2})至(\d{2}-\d{2})/);
+          if (fullRange.length === 2) {
+            [customStart, customEnd] = fullRange;
+          } else if (shortRange) {
+            customStart = `${activity.start.slice(0, 4)}-${shortRange[1]} 00:00`;
+            customEnd = `${activity.start.slice(0, 4)}-${shortRange[2]} 23:59`;
+          }
+        }
+        if (customInputs[0]) customInputs[0].value = toDateTimeLocal(customStart);
+        if (customInputs[1]) customInputs[1].value = toDateTimeLocal(customEnd);
+        $("conditions").innerHTML = conditionConfigsForTask(source, activity).map((config, index) => conditionTemplate(index + 1, config)).join("");
+        $("rewardList").innerHTML = rewardConfigsForTask(source).map(reward => rewardTemplate(reward)).join("");
+        $("prerequisiteMode").value = source?.prerequisiteMode || "无前置任务";
+        const prerequisiteTasks = tasksForActivity(activity.id).filter(item => item.id !== task?.id);
+        $("prerequisiteTaskSelect").innerHTML = prerequisiteTasks.map(item => `<option value="${item.id}">${escapeHtml(item.name)}（${item.id}）</option>`).join("") || `<option value="">当前无可选前置任务</option>`;
+        $("prerequisiteTaskSelect").value = source?.prerequisiteTaskId || prerequisiteTasks[0]?.id || "";
+        document.querySelectorAll(".prerequisite-extra").forEach(row => row.hidden = $("prerequisiteMode").value === "无前置任务");
+        const chainSelect = $("taskChainSelect");
+        chainSelect.innerHTML = `<option value="">不加入任务链</option>${chainsForActivity(activity.id).map(chain => `<option value="${chain.id}">${escapeHtml(chain.name)}（${chain.id}）</option>`).join("")}`;
+        chainSelect.value = source?.chainId || "";
+        $("taskEditorWarning").textContent = readOnly
+          ? `${activity.status === "已归档" ? "活动已归档" : activity.component.status !== "已启用" ? "任务组件已停用" : "任务已停用"}，当前仅可查看。请先恢复可编辑状态。`
+          : "已发布任务修改后只保存为待发布草稿，不会直接改动线上版本；发布后影响所有用户，进行中进度迁移规则待确认。";
+        document.querySelectorAll("#page-task-editor .form-stack input, #page-task-editor .form-stack select, #page-task-editor .form-stack textarea, #page-task-editor .form-stack button").forEach(control => {
+          control.disabled = readOnly;
+        });
+        $("taskCodeInput").disabled = true;
+        $("saveTask").disabled = readOnly;
+        $("openPublishModal").disabled = readOnly;
+      }
+
+      function renderDataPage() {
+        const activity = currentActivity();
+        renderActivityContextNavigation("data");
+        $("dataActivityName").textContent = activity.name;
+        $("dataActivityMeta").textContent = `${activity.id} · ${activity.status} · ${activity.phase}`;
+        $("participantCount").textContent = numberText(activity.metrics.participants);
+        $("completedUserCount").textContent = numberText(activity.metrics.completed);
+        $("pendingClaimCount").textContent = numberText(activity.metrics.pendingClaim);
+        $("claimedCount").textContent = numberText(activity.metrics.claimed);
+        $("fulfillmentFailedCount").textContent = numberText(activity.metrics.fulfillmentFailed);
+        renderParticipants();
+        renderParticipationEvents();
+      }
+
+      function renderParticipants() {
+        const keyword = $("participantKeyword").value.trim().toLowerCase();
+        const progress = $("progressStatusFilter").value;
+        const claim = $("claimStatusFilter").value;
+        const reward = $("rewardStatusFilter").value;
+        const rows = (participants[state.activityId] || []).filter(item =>
+          (!keyword || `${item.userId} ${item.taskId} ${item.taskName}`.toLowerCase().includes(keyword)) &&
+          (!progress || item.progressStatus === progress) &&
+          (!claim || item.claimStatus === claim) &&
+          (!reward || item.rewardStatus === reward)
+        );
+        $("participantTotal").textContent = `共 ${rows.length} 条用户任务实例`;
+        $("participantTableBody").innerHTML = rows.map(item => `<tr>
+          <td>${item.userId}</td><td>${item.first}</td><td>${item.last}</td><td class="text-left">${escapeHtml(item.taskName)}<br><span class="weak">${item.taskId}</span></td>
+          <td>${taskPeriodLabel(item, currentActivity())}</td><td>${badge(item.progressStatus)}</td><td>${escapeHtml(item.progress)}</td><td>${badge(item.claimStatus)}</td><td>${badge(item.rewardStatus)}</td><td>${item.rewardOrder}</td>
+          <td><span class="link" data-action="view-user" data-user-id="${item.userId}">用户详情</span></td>
+        </tr>`).join("") || `<tr><td colspan="11"><div class="empty-box">当前活动暂无符合条件的用户任务实例</div></td></tr>`;
+      }
+
+      function renderParticipationEvents() {
+        const activity = currentActivity();
+        const rows = participationEvents[state.activityId] || [];
+        $("participantEventTableBody").innerHTML = rows.map(event => `<tr>
+          <td>${event.time}</td><td>${event.id}</td><td>${event.userId}</td><td class="text-left">${event.component}<br><span class="weak">${activity.component?.id || "—"}</span></td><td>${event.objectId}</td>
+          <td>${event.eventType}</td><td class="text-left">${escapeHtml(event.summary)}</td><td>${badge(event.result)}</td>
+        </tr>`).join("") || `<tr><td colspan="8"><div class="empty-box">当前活动暂无统一参与事件</div></td></tr>`;
+      }
+
+      function taskPeriodLabel(item, activity) {
+        const task = tasks.find(candidate => candidate.id === item.taskId);
+        if (task?.cycle === "自然日") {
+          const monthDay = String(item.last || "").match(/\d{2}-\d{2}/)?.[0];
+          return monthDay ? `${activity.start.slice(0, 4)}-${monthDay}` : "当前自然日";
+        }
+        return `${activity.start.slice(0, 10)}—${activity.end.slice(0, 10)}`;
+      }
+
+      function openUserDetail(userId) {
+        const activity = currentActivity();
+        const userTasks = (participants[activity.id] || []).filter(row => row.userId === userId);
+        if (!userTasks.length) return;
+        const events = (participationEvents[activity.id] || []).filter(event => event.userId === userId);
+        openDrawer("用户活动详情", `${userId} · ${activity.name} · ${activity.id}`, `
+          <section class="drawer-section"><h3>用户活动汇总</h3><div class="key-values">
+            <div class="key-value"><span>任务实例数</span><span>${userTasks.length}</span></div>
+            <div class="key-value"><span>已完成</span><span>${userTasks.filter(item => item.progressStatus === "已完成").length}</span></div>
+            <div class="key-value"><span>待领取</span><span>${userTasks.filter(item => item.claimStatus === "待领取").length}</span></div>
+            <div class="key-value"><span>履约失败</span><span>${userTasks.filter(item => item.rewardStatus === "发放失败").length}</span></div>
+          </div></section>
+          <section class="drawer-section"><h3>用户任务周期记录</h3><div class="table-wrap"><table class="table"><thead><tr><th>任务</th><th>任务版本</th><th>周期</th><th>进度</th><th>进度状态</th><th>领取状态</th><th>履约状态</th></tr></thead><tbody>
+            ${userTasks.map(item => `<tr><td>${escapeHtml(item.taskName)}</td><td>${tasks.find(task => task.id === item.taskId)?.version || "—"}</td><td>${taskPeriodLabel(item, activity)}</td><td>${escapeHtml(item.progress)}</td><td>${badge(item.progressStatus)}</td><td>${badge(item.claimStatus)}</td><td>${badge(item.rewardStatus)}</td></tr>`).join("")}
+          </tbody></table></div></section>
+          <section class="drawer-section"><h3>统一参与时间线</h3><ul class="timeline">${events.map(event => `<li class="timeline-item"><span class="timeline-time">${event.time.slice(11)}</span><div class="timeline-body"><strong>${event.eventType}</strong><span>${escapeHtml(event.summary)}<br>事件ID：${event.id} · 业务对象：${event.objectId}</span></div></li>`).join("") || `<li class="timeline-item"><div class="timeline-body"><strong>暂无事件</strong></div></li>`}</ul></section>
+        `);
+      }
+
+      function openIndicatorDetail(key) {
+        const meta = indicatorMeta[key];
+        if (!meta) return;
+        openDrawer(meta.name, `${meta.code} · ${meta.domain}`, `
+          <section class="drawer-section"><h3>指标定义</h3><div class="key-values">
+            <div class="key-value"><span>业务定义</span><span>${meta.definition}</span></div>
+            <div class="key-value"><span>数据类型 / 单位</span><span>${meta.type} / ${meta.unit}</span></div>
+            <div class="key-value"><span>可使用位置</span><span>${meta.usage}</span></div>
+            <div class="key-value"><span>状态</span><span>${badge(meta.state)}</span></div>
+          </div></section>
+          <section class="drawer-section"><h3>任务配置约束</h3><div class="key-values">
+            <div class="key-value"><span>支持统计方式</span><span>${meta.aggregation}</span></div>
+            <div class="key-value"><span>支持判断符</span><span>${meta.operators}</span></div>
+            <div class="key-value"><span>支持过滤维度</span><span>${meta.filters}</span></div>
+          </div></section>
+          <section class="drawer-section"><h3>数据说明</h3><div class="key-values">
+            <div class="key-value"><span>更新频率</span><span>${meta.freshness}</span></div>
+            <div class="key-value"><span>数据负责人</span><span>${meta.owner}</span></div>
+            <div class="key-value"><span>历史回补</span><span>待研发评审确认</span></div>
+          </div></section>
+          <div class="info-note"><strong>使用原则</strong>活动运营只能引用状态为“可用”的指标，不能修改指标业务口径和数据映射。</div>
+        `);
+      }
+
+      function appendOperation(activityId, object, objectId, type, summary) {
+        operationLogs[activityId] ||= [];
+        operationLogs[activityId].unshift({ time: nowText(), id: `OPL${Date.now().toString().slice(-10)}`, object, objectId, type, operator: "平台运营", summary, result: "成功" });
+      }
+
+      function addTaskComponent() {
+        const activity = currentActivity();
+        if (activity.status === "已归档") return showToast("已归档活动不可添加组件");
+        if (activity.component) return showToast("当前活动已存在任务组件实例");
+        openConfirm("添加任务组件？", `系统将在活动 ${activity.id} 下显式创建一个 TASK 组件实例。添加后即为已启用，但不会自动创建任何任务。`, () => {
+          activity.component = { id: `CMP_TASK_${activity.id.replace("ACT", "")}`, status: "已启用", createdAt: nowText(), createdBy: "平台运营", updatedAt: nowText() };
+          appendOperation(activity.id, "任务组件", activity.component.id, "添加组件", "显式添加任务组件；添加后状态为已启用");
+          closeConfirm();
+          renderActivityDetail();
+          showToast(`任务组件已添加：${activity.component.id}`);
+        }, "确认添加");
+      }
+
+      function toggleComponent() {
+        const activity = currentActivity();
+        if (!activity.component) return;
+        if (activity.status === "已归档") return showToast("已归档活动不可变更组件状态");
+        const next = activity.component.status === "已启用" ? "已停用" : "已启用";
+        openConfirm(`${next === "已启用" ? "重新启用" : "停用"}任务组件？`, "本操作只修改组件管理状态。对运行中任务进度和领取的影响仍待确认，本原型不预设处理规则。", () => {
+          activity.component.status = next;
+          activity.component.updatedAt = nowText();
+          appendOperation(activity.id, "任务组件", activity.component.id, next === "已启用" ? "重新启用" : "停用组件", `组件状态变更为${next}；运行影响规则待确认`);
+          closeConfirm();
+          renderActivityDetail();
+          showToast(`组件状态已更新为${next}`);
+        });
+      }
+
+      function pauseActivity() {
+        const activity = currentActivity();
+        if (!["已发布", "已暂停"].includes(activity.status)) return showToast("仅已发布或已暂停活动可执行该操作");
+        const next = activity.status === "已暂停" ? "已发布" : "已暂停";
+        openConfirm(next === "已暂停" ? "暂停活动？" : "恢复活动？", "这里只变更活动管理状态；对任务进度、领取和奖励回调的具体语义仍是上线前待确认项。", () => {
+          activity.status = next;
+          activity.updatedAt = nowText();
+          appendOperation(activity.id, "活动", activity.id, next === "已暂停" ? "暂停" : "恢复", `活动管理状态变更为${next}；运行阶段保持${activity.phase}`);
+          closeConfirm();
+          renderActivityDetail();
+          showToast(`活动管理状态已更新为${next}`);
+        });
+      }
+
+      function openNewTaskChain() {
+        const activity = currentActivity();
+        if (activity.status === "已归档") return showToast("已归档活动不可新增任务链");
+        if (activity.component?.status !== "已启用") return showToast("任务组件已停用，请先在活动详情重新启用");
+        openDrawer("新建任务链", `${activity.name} · ${activity.component.id}`, `
+          <section class="drawer-section"><h3>任务链基础规则</h3><div class="form-grid">
+            <div class="form-row"><label class="required">任务链名称</label><input class="input" id="newChainName" value="集结进阶任务链"></div>
+            <div class="form-row"><label class="required">重置周期</label><select class="select" id="newChainCycle"><option>不重置</option><option>自然日</option><option>自然周</option></select></div>
+            <div class="form-row"><label>每周期推进上限</label><input class="input" id="newChainMax" value="1步 / 自然日"></div>
+            <div class="form-row full"><label>链内任务顺序</label><input class="input" id="newChainSteps" value="任务A → 任务B → 任务C"><span class="hint">正式保存时需校验同组件归属与循环依赖。</span></div>
+          </div></section>
+          <div class="actions"><button class="btn ghost" data-action="close-drawer">取消</button><button class="btn blue" data-action="save-task-chain">保存任务链</button></div>
+        `);
+      }
+
+      function saveTaskChain() {
+        const activity = currentActivity();
+        if (activity.status === "已归档" || activity.component?.status !== "已启用") return showToast("当前活动或任务组件不可编辑");
+        const name = $("newChainName")?.value.trim();
+        if (!name) return showToast("请输入任务链名称");
+        const id = `CHN${30000 + taskChains.length + 1}`;
+        taskChains.push({ id, activityId: state.activityId, componentInstanceId: activity.component.id, name, cycle: $("newChainCycle").value, maxAdvance: $("newChainMax").value || "不限制", steps: $("newChainSteps").value || "待配置", status: "已启用" });
+        appendOperation(state.activityId, "任务链", id, "创建任务链", `创建任务链“${name}”`);
+        closeDrawer();
+        renderTaskList();
+        showToast(`任务链已创建：${id}`);
+      }
+
+      function copyTask(taskId) {
+        const source = tasks.find(item => item.id === taskId);
+        if (!source) return;
+        const activity = activityById(source.activityId);
+        if (activity?.status === "已归档" || activity?.component?.status !== "已启用" || activity.component.id !== source.componentInstanceId) {
+          return showToast("任务组件不可编辑，不能复制任务");
+        }
+        const id = `TSK${50000 + tasks.length + 1}`;
+        const latest = source.draft ? { ...source, ...source.draft } : source;
+        const copied = { ...latest, id, name: `${latest.name}-副本`, code: `${source.code}_COPY`, version: "V1草稿", status: "草稿", updatedAt: nowText() };
+        delete copied.draft;
+        tasks.push(copied);
+        appendOperation(source.activityId, "任务", id, "复制", `从 ${source.id} 复制任务草稿`);
+        renderTaskList();
+        showToast(`已复制为任务草稿 ${id}`);
+      }
+
+      function toggleTask(taskId) {
+        const task = tasks.find(item => item.id === taskId);
+        if (!task) return;
+        const activity = activityById(task.activityId);
+        if (activity?.status === "已归档" || activity?.component?.status !== "已启用" || activity.component.id !== task.componentInstanceId) {
+          return showToast("任务组件不可编辑，不能变更任务状态");
+        }
+        if (task.status === "草稿") return showToast("草稿任务需正式发布后才能停用");
+        const next = task.status === "已停用" ? "已发布" : "已停用";
+        openConfirm(`${next === "已停用" ? "停用" : "重新启用"}任务？`, "状态变更不修改任务版本；用户运行态影响需由研发按最终规则实现。", () => {
+          task.status = next;
+          task.updatedAt = nowText();
+          appendOperation(task.activityId, "任务", task.id, next === "已停用" ? "停用" : "启用", `任务状态变更为${next}`);
+          closeConfirm();
+          renderTaskList();
+          showToast(`任务状态已更新为${next}`);
+        });
+      }
+
+      function indicatorOptions(selectedKey) {
+        return Object.entries(indicatorMeta)
+          .filter(([, meta]) => meta.state === "可用" && meta.usage.includes("完成条件"))
+          .map(([key, meta]) => `<option value="${key}" ${key === selectedKey ? "selected" : ""}>${escapeHtml(meta.name)}</option>`)
+          .join("");
+      }
+
+      function conditionTemplate(index, config = {}) {
+        const metricKey = config.metricKey || "kills";
+        const meta = indicatorMeta[metricKey] || indicatorMeta.kills;
+        const role = config.role || "主进度条件";
+        const aggregation = config.aggregation || meta.aggregation.split("、")[0];
+        const operator = config.operator || (meta.type === "事件" ? "等于 =" : "大于等于 ≥");
+        const target = config.target ?? (meta.type === "事件" ? "已发生" : "1");
+        const filter = config.filter || (meta.domain === "游戏" ? "游戏=PUBG" : "按指标默认口径");
+        return `<div class="condition-box condition-item">
+          <div class="condition-head"><strong>条件 ${index}</strong><span class="metric-chip">数据更新：${escapeHtml(meta.freshness)}</span></div>
+          <div class="condition-grid">
+            <div><span class="mini-label">条件角色</span><select class="select condition-role"><option ${role === "主进度条件" ? "selected" : ""}>主进度条件</option><option ${role === "伴随约束条件" ? "selected" : ""}>伴随约束条件</option></select></div>
+            <div><span class="mini-label">任务指标</span><select class="select indicator-select">${indicatorOptions(metricKey)}</select></div>
+            <div><span class="mini-label">统计方式</span><select class="select aggregation-select"><option>${escapeHtml(aggregation)}</option></select></div>
+            <div><span class="mini-label">判断符</span><select class="select operator-select"><option ${operator === "大于等于 ≥" ? "selected" : ""}>大于等于 ≥</option><option ${operator === "大于 >" ? "selected" : ""}>大于 &gt;</option><option ${operator === "等于 =" ? "selected" : ""}>等于 =</option></select></div>
+            <div><span class="mini-label">目标值</span><input class="input target-input" value="${escapeHtml(target)}"></div>
+            <div><span class="mini-label">过滤维度</span><select class="select filter-select"><option>${escapeHtml(filter)}</option></select></div>
             <button class="remove-condition">删除</button>
           </div><span class="hint condition-summary">指标口径：${escapeHtml(meta.definition)}；单位：${escapeHtml(meta.unit)}。</span>
         </div>`;
