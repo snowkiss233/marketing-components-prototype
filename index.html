@@ -1290,8 +1290,8 @@
           </div>
 
           <div class="table-wrap">
-            <table class="table" id="activityTable">
-              <thead><tr><th style="width:132px">活动ID</th><th style="width:220px">活动名称</th><th style="width:120px">业务来源</th><th style="width:190px">活动时间</th><th style="width:90px">管理状态</th><th style="width:90px">运行阶段</th><th style="width:120px">已接入组件</th><th style="width:84px">负责人</th><th style="width:100px">操作</th></tr></thead>
+            <table class="table" id="activityTable" style="min-width:1480px">
+              <thead><tr><th style="width:132px">活动ID</th><th style="width:220px">活动名称</th><th style="width:120px">业务来源</th><th style="width:190px">活动时间</th><th style="width:90px">管理状态</th><th style="width:90px">运行阶段</th><th style="width:120px">已接入组件</th><th style="width:84px">负责人</th><th style="width:260px">操作</th></tr></thead>
               <tbody id="activityTableBody"></tbody>
             </table>
           </div>
@@ -1310,9 +1310,8 @@
               <div class="section-title"><h2>基础信息</h2><span>用于活动识别、查询与责任归属</span></div>
               <div class="form-grid">
                 <div class="form-row"><label class="required">活动名称</label><input class="input" id="activityNameInput" value="战区行动-极速突围3.0"></div>
-                <div class="form-row"><label class="required">业务域</label><select class="select" id="activityDomainInput"><option>游戏社区活动</option><option>语音社交活动</option><option>平台综合活动</option></select></div>
-                <div class="form-row"><label class="required">所属产品</label><select class="select" id="activityProductInput"><option>PUBG社区</option><option>无畏契约社区</option><option>NN平台</option></select></div>
-                <div class="form-row"><label class="required">责任部门</label><input class="input" id="activityDepartmentInput" value="社区运营中心"></div>
+                <div class="form-row"><label class="required">所属产品</label><select class="select" id="activityProductInput"><option>NN</option><option>雷神加速器</option></select></div>
+                <div class="form-row"><label class="required">业务域</label><select class="select" id="activityDomainInput"><option>社区活动</option><option>游戏服务活动</option><option>赛事活动</option></select><span class="hint" id="activityDomainHint">业务域选项由所属产品联动。</span></div>
                 <div class="form-row"><label class="required">负责人</label><input class="input" id="activityOwnerInput" value="陆壮"></div>
                 <div class="form-row full"><label>活动说明</label><textarea class="textarea" id="activityDescriptionInput">PUBG暑期主题运营活动，通过单次任务与每日任务提升新用户转化和游戏活跃。</textarea></div>
               </div>
@@ -1345,7 +1344,6 @@
           </div>
 
           <div class="toolbar"><span class="badge live" id="activityDetailStatus">已发布</span><span class="badge blue" id="activityDetailPhase">进行中</span><span class="muted" id="activityDetailVersion"></span></div>
-          <nav class="activity-context-tabs" data-activity-context-nav></nav>
           <div class="form-stack">
             <section class="rule-card activity-detail-panel" data-activity-detail-panel="basic">
               <div class="section-title"><h2>活动主数据</h2><span>唯一活动主键可供其他系统查询</span></div>
@@ -1371,7 +1369,6 @@
         </div>
 
         <div class="page" id="page-task-list" data-section="activities">
-          <nav class="activity-context-tabs" data-activity-context-nav></nav>
           <div class="page-title">
             <div><h1>任务组件</h1><p>当前页面是“活动详情 → 组件管理 → 任务组件”的下钻配置页，任务不可脱离活动单独创建。</p></div>
             <div class="actions"><button class="btn blue" id="newTaskButton" data-action="new-task">新增任务</button></div>
@@ -1394,7 +1391,6 @@
         </div>
 
         <div class="page" id="page-task-editor" data-section="activities">
-          <nav class="activity-context-tabs" data-activity-context-nav></nav>
           <div class="page-title">
             <div><h1 id="taskEditorTitle">编辑任务</h1><p id="taskEditorMeta"></p></div>
             <div class="actions"><button class="btn ghost" data-action="back-task-list">取消</button><button class="btn blue" id="saveTask">保存草稿</button><button class="btn green" id="openPublishModal">发布新版本</button></div>
@@ -1516,8 +1512,7 @@
         </div>
 
         <div class="page" id="page-data-overview" data-section="activities">
-          <nav class="activity-context-tabs" data-activity-context-nav></nav>
-          <div class="page-title"><div><h1>活动参与数据</h1><p>查询当前活动内用户任务进度、领取状态与奖励履约结果；三类状态分别维护、关联查询。</p></div><div class="actions"><button class="btn ghost" data-action="view-current-activity">返回活动详情</button><button class="btn blue" id="exportData">导出当前结果</button></div></div>
+          <div class="page-title"><div><h1>活动参与数据</h1><p>查询当前活动内用户任务进度、领取状态与奖励履约结果；三类状态分别维护、关联查询。</p></div><div class="actions"><button class="btn ghost" data-page="activity-list">返回活动列表</button><button class="btn blue" id="exportData">导出当前结果</button></div></div>
           <div class="scope-note"><strong id="dataActivityName">当前活动</strong><span class="muted" id="dataActivityMeta"></span></div>
           <div class="stats"><div class="stat-card"><span>参与用户数</span><strong id="participantCount">0</strong><small>活动口径</small></div><div class="stat-card"><span>任务完成人数</span><strong id="completedUserCount">0</strong><small>任务进度状态</small></div><div class="stat-card"><span>待领取</span><strong id="pendingClaimCount">0</strong><small>领取状态</small></div><div class="stat-card"><span>已领取</span><strong id="claimedCount">0</strong><small>领取状态</small></div><div class="stat-card"><span>履约失败</span><strong class="danger" id="fulfillmentFailedCount">0</strong><small>奖励服务状态</small></div></div>
           <div class="toolbar"><input class="input" id="participantKeyword" placeholder="用户ID / 任务ID / 任务名称"><select class="select" id="progressStatusFilter"><option value="">全部任务进度状态</option><option>进行中</option><option>已完成</option><option>已过期</option></select><select class="select" id="claimStatusFilter"><option value="">全部领取状态</option><option>未满足领取</option><option>待领取</option><option>已领取</option></select><select class="select" id="rewardStatusFilter"><option value="">全部履约状态</option><option>未触发</option><option>发放中</option><option>发放成功</option><option>发放失败</option></select><button class="btn blue" data-action="filter-participants">搜索</button><button class="btn ghost" data-action="reset-participants">重置</button></div>
@@ -1570,7 +1565,6 @@
           product: "PUBG社区",
           sourceSystem: "NN运营后台",
           sourceBizId: "PUBG-PEAK-2026",
-          department: "社区运营中心",
           owner: "李默",
           start: "2026-07-06 00:00",
           end: "2026-07-31 23:59",
@@ -1589,7 +1583,6 @@
           product: "PUBG社区",
           sourceSystem: "NN运营后台",
           sourceBizId: "PUBG-BREAKOUT-2026-02",
-          department: "社区运营中心",
           owner: "陆壮",
           start: "2026-06-18 00:00",
           end: "2026-06-30 23:59",
@@ -1608,7 +1601,6 @@
           product: "无畏契约社区",
           sourceSystem: "NN运营后台",
           sourceBizId: "VAL-3RD-ANNIVERSARY",
-          department: "社区运营中心",
           owner: "余意",
           start: "2026-07-12 00:00",
           end: "2026-07-19 23:59",
@@ -1627,7 +1619,6 @@
           product: "NN平台",
           sourceSystem: "NN运营后台",
           sourceBizId: "VOICE-SUMMER-2026",
-          department: "语音运营中心",
           owner: "王齐",
           start: "2026-08-01 00:00",
           end: "2026-08-20 23:59",
@@ -1646,7 +1637,6 @@
           product: "PUBG社区",
           sourceSystem: "历史活动迁移",
           sourceBizId: "PUBG-ONBOARD-2025",
-          department: "社区运营中心",
           owner: "余意",
           start: "2025-03-18 00:00",
           end: "2025-04-08 23:59",
@@ -1665,7 +1655,6 @@
           product: "NN平台",
           sourceSystem: "外部业务系统",
           sourceBizId: "VOICE-MIDSUMMER-2026",
-          department: "语音运营中心",
           owner: "王齐",
           start: "2026-07-18 00:00",
           end: "2026-08-05 23:59",
@@ -1684,7 +1673,6 @@
           product: "PUBG社区",
           sourceSystem: "NN运营后台",
           sourceBizId: "PUBG-SUMMER-2026-03",
-          department: "社区运营中心",
           owner: "陆壮",
           start: "2026-08-08 00:00",
           end: "2026-08-31 23:59",
@@ -1785,6 +1773,11 @@
         indicators: { crumb: "业务指标库", tabs: [{ label: "指标列表", page: "indicator-list" }] }
       };
 
+      const activityDomainOptions = {
+        NN: ["社区活动", "游戏服务活动", "赛事活动"],
+        "雷神加速器": []
+      };
+
       const state = { page: "activity-list", activityId: "ACT20260706002", taskId: "TSK30001", activityDetailTab: "basic", activityFormMode: "create", editingActivityId: null };
       let toastTimer;
       let confirmHandler = null;
@@ -1852,18 +1845,6 @@
         $("subTabs").innerHTML = pageConfig[section].tabs
           .map(tab => `<button class="admin-tab ${tab.page === activePage ? "active" : ""}" data-page="${tab.page}">${tab.label}</button>`)
           .join("");
-      }
-
-      function renderActivityContextNavigation(activeKey) {
-        const tabs = [
-          { key: "basic", label: "基础信息" },
-          { key: "components", label: "组件管理" },
-          { key: "data", label: "参与数据" },
-          { key: "logs", label: "操作日志" }
-        ];
-        document.querySelectorAll("[data-activity-context-nav]").forEach(nav => {
-          nav.innerHTML = tabs.map(tab => `<button class="activity-context-tab ${tab.key === activeKey ? "active" : ""}" data-action="activity-context-tab" data-context-tab="${tab.key}">${tab.label}</button>`).join("");
-        });
       }
 
       function navigate(page, context = {}) {
@@ -1940,9 +1921,8 @@
         const draft = activity?.pendingDraft || activity;
         return {
           name: draft?.name || "新建营销活动",
-          domain: draft?.domain || "游戏社区活动",
-          product: draft?.product || "PUBG社区",
-          department: draft?.department || "社区运营中心",
+          domain: draft?.domain || "社区活动",
+          product: draft?.product || "NN",
           owner: draft?.owner || "陆壮",
           description: draft?.description || draft?.subtitle || "用于演示活动注册与后续组件显式添加流程。",
           sourceSystem: draft?.sourceSystem || "NN运营后台",
@@ -1951,6 +1931,20 @@
           start: draft?.start || "2026-08-08 00:00",
           end: draft?.end || "2026-08-31 23:59"
         };
+      }
+
+      function syncActivityDomainOptions(product, selectedDomain = "") {
+        const options = activityDomainOptions[product] || [];
+        const domainSelect = $("activityDomainInput");
+        const domainHint = $("activityDomainHint");
+        domainSelect.innerHTML = options.length
+          ? options.map(option => `<option value="${option}">${option}</option>`).join("")
+          : '<option value="">待配置</option>';
+        domainSelect.disabled = options.length === 0;
+        domainSelect.value = options.includes(selectedDomain) ? selectedDomain : (options[0] || "");
+        domainHint.textContent = options.length
+          ? `已加载 ${product} 对应的业务域。`
+          : `${product} 的业务域枚举待配置。`;
       }
 
       function renderActivityForm() {
@@ -1966,9 +1960,9 @@
           ? `活动ID：${activity.id}。修改已发布活动时先形成草稿，发布后才替换线上配置。`
           : "注册活动主数据。任务将在活动创建后按需配置，不在此处选择组件。";
         $("activityNameInput").value = values.name;
-        $("activityDomainInput").value = values.domain;
-        $("activityProductInput").value = values.product;
-        $("activityDepartmentInput").value = values.department;
+        const product = Object.prototype.hasOwnProperty.call(activityDomainOptions, values.product) ? values.product : "NN";
+        $("activityProductInput").value = product;
+        syncActivityDomainOptions(product, values.domain);
         $("activityOwnerInput").value = values.owner;
         $("activityDescriptionInput").value = values.description;
         $("activitySourceSystemInput").value = values.sourceSystem;
@@ -1984,7 +1978,6 @@
           name: $("activityNameInput").value.trim(),
           domain: $("activityDomainInput").value,
           product: $("activityProductInput").value,
-          department: $("activityDepartmentInput").value.trim(),
           owner: $("activityOwnerInput").value.trim(),
           description: $("activityDescriptionInput").value.trim(),
           sourceSystem: $("activitySourceSystemInput").value,
@@ -1996,8 +1989,12 @@
       }
 
       function validateActivityForm(values) {
-        if (!values.name || !values.sourceSystem || !values.sourceBizId || !values.start || !values.end) {
-          showToast("请填写活动名称、业务来源和活动时间");
+        if (!values.name || !values.product || !values.domain || !values.owner || !values.sourceSystem || !values.sourceBizId || !values.start || !values.end) {
+          showToast("请填写活动名称、所属产品、业务域、负责人、业务来源和活动时间");
+          return false;
+        }
+        if (!(activityDomainOptions[values.product] || []).includes(values.domain)) {
+          showToast("当前产品尚未配置可用业务域");
           return false;
         }
         if (values.start >= values.end) {
@@ -2120,7 +2117,10 @@
             <td>${componentCell}</td>
             <td>${escapeHtml(activity.owner)}</td>
             <td><div class="table-actions">
-              <span class="link" data-action="view-activity" data-activity-id="${activity.id}">详情</span>
+              <span class="link" data-action="activity-context-tab" data-context-tab="basic" data-activity-id="${activity.id}">基础信息</span>
+              <span class="link" data-action="activity-context-tab" data-context-tab="components" data-activity-id="${activity.id}">组件管理</span>
+              <span class="link" data-action="activity-context-tab" data-context-tab="data" data-activity-id="${activity.id}">参与数据</span>
+              <span class="link" data-action="activity-context-tab" data-context-tab="logs" data-activity-id="${activity.id}">操作日志</span>
             </div></td>
           </tr>`;
         }).join("") || `<tr><td colspan="9"><div class="empty-box">未找到符合条件的活动</div></td></tr>`;
@@ -2129,7 +2129,6 @@
       function renderActivityDetail() {
         const activity = currentActivity();
         const componentTasks = tasksForActivity(activity.id);
-        renderActivityContextNavigation(state.activityDetailTab);
         document.querySelectorAll("[data-activity-detail-panel]").forEach(panel => {
           panel.hidden = panel.dataset.activityDetailPanel !== state.activityDetailTab;
         });
@@ -2148,13 +2147,13 @@
         $("activityDetails").innerHTML = [
           ["活动ID", activity.id],
           ["活动名称", activity.name],
-          ["业务域", activity.domain],
           ["所属产品", activity.product],
+          ["业务域", activity.domain],
           ["来源系统", activity.sourceSystem],
           ["来源业务ID", activity.sourceBizId],
           ["活动时间", `${activity.start} 至 ${activity.end}`],
           ["时区", "Asia/Shanghai"],
-          ["负责人", `${activity.owner} / ${activity.department}`]
+          ["负责人", activity.owner]
         ].map(([label, value]) => `<div class="detail-item"><dt>${label}</dt><dd>${escapeHtml(value)}</dd></div>`).join("");
 
         if (!activity.component) {
@@ -2200,7 +2199,6 @@
       function renderTaskList() {
         const activity = currentActivity();
         if (!activity.component) return;
-        renderActivityContextNavigation("components");
         const keyword = $("taskKeyword").value.trim().toLowerCase();
         const category = $("taskCategory").value;
         const status = $("taskStatus").value;
@@ -2307,7 +2305,6 @@
         const isNew = !task;
         const source = task?.draft || task;
         const readOnly = activity.component.status !== "已启用" || activity.status === "已归档" || task?.status === "已停用";
-        renderActivityContextNavigation("components");
         $("taskEditorTitle").textContent = isNew ? "新增任务" : `编辑任务：${task.name}`;
         $("taskEditorMeta").textContent = isNew
           ? "任务ID将在首次保存后生成"
@@ -2362,7 +2359,6 @@
 
       function renderDataPage() {
         const activity = currentActivity();
-        renderActivityContextNavigation("data");
         $("dataActivityName").textContent = activity.name;
         $("dataActivityMeta").textContent = `${activity.id} · ${activity.status} · ${activity.phase}`;
         $("participantCount").textContent = numberText(activity.metrics.participants);
@@ -2782,10 +2778,6 @@
           state.editingActivityId = activity.id;
           navigate("activity-create");
         }
-        if (action === "view-activity") {
-          state.activityDetailTab = "basic";
-          navigate("activity-detail", { activityId });
-        }
         if (action === "activity-context-tab") {
           const contextTab = actionNode.dataset.contextTab;
           if (contextTab === "data") {
@@ -2798,10 +2790,6 @@
         if (action === "add-task-component") addTaskComponent();
         if (action === "toggle-component") toggleComponent();
         if (action === "enter-task-component") navigate("task-list", { taskId: null });
-        if (action === "view-current-activity") {
-          state.activityDetailTab = "basic";
-          navigate("activity-detail");
-        }
         if (action === "view-current-activity-detail") {
           state.activityDetailTab = "components";
           navigate("activity-detail");
@@ -2874,6 +2862,7 @@
         renderActivityList();
         showToast("筛选条件已重置");
       });
+      $("activityProductInput").addEventListener("change", event => syncActivityDomainOptions(event.target.value));
       $("saveActivity").addEventListener("click", () => saveActivityForm(false));
       $("publishActivity").addEventListener("click", () => saveActivityForm(true));
       $("indicatorSearch").addEventListener("click", () => {
